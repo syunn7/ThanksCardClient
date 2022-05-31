@@ -14,7 +14,7 @@ namespace ThanksCardClient.Services
         private static SessionService instance = new SessionService { IsAuthorized = false };
 
         public Boolean IsAuthorized { set; get; }
-        public User AuthorizedUser { set; get; }
+        public Employee AuthorizedEmployee { set; get; }
 
         public static SessionService Instance
         {

@@ -1,4 +1,5 @@
-﻿#nullable disable
+﻿
+#nullable disable
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,8 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region CdProperty
-        private long _EmployeeCd;
-        public long EmployeeCd
+        private string _EmployeeCd;
+        public string EmployeeCd
         {
             get { return _EmployeeCd; }
             set { SetProperty(ref _EmployeeCd, value); }
@@ -30,20 +31,20 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region NameProperty
-        private string Employee;
+        private string _EmployeeName;
         public string EmployeeName
         {
-            get { return Employee; }
-            set { SetProperty(ref Employee, value); }
+            get { return _EmployeeName; }
+            set { SetProperty(ref _EmployeeName, value); }
         }
         #endregion
 
         #region Furiganaperty
-        private string Furigana;
-        public string Furiganas
+        private string _Furigana;
+        public string Furigana
         {
-            get { return Furiganas; }
-            set { SetProperty(ref Furiganas, value); }
+            get { return _Furigana; }
+            set { SetProperty(ref _Furigana, value); }
         }
         #endregion
 
@@ -57,29 +58,29 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region IsAdminProperty
-        private bool _IsAdmin;
+        /*private bool _IsAdmin;
         public bool IsAdmin
         {
             get { return _IsAdmin; }
             set { SetProperty(ref _IsAdmin, value); }
-        }
+        }*/
         #endregion
 
         #region OrganizationIdProperty
-        private long? OrganizationId;
+        private long? _OrganizationId;
         public long? OrganizationId
         {
-            get { return OrganizationId; }
-            set { SetProperty(ref OrganizationId, value); }
+            get { return _OrganizationId; }
+            set { SetProperty(ref _OrganizationId, value); }
         }
         #endregion
 
         #region OrganizationProperty
         private Organization _Organization;
-        public Organization Organizations
+        public Organization Organization
         {
-            get { return Organization; }
-            set { SetProperty(ref Organization, value); }
+            get { return _Organization; }
+            set { SetProperty(ref _Organization, value); }
         }
         #endregion
 
@@ -104,17 +105,17 @@ namespace ThanksCardClient.Models
             return Employees;
         }
 
-        public async Task<Employee> PostUserAsync(Employee Employees)
+        public async Task<Employee> PostUserAsync(Employee Employee)
         {
             IRestService rest = new RestService();
-            Employee createdEmployee = await rest.PostEmployeeAsync(Employees);
+            Employee createdEmployee = await rest.PostEmployeeAsync(Employee);
             return createdEmployee;
         }
 
-        public async Task<Employee> PutEmployeeAsync(Employee Employees)
+        public async Task<Employee> PutEmployeeAsync(Employee Employee)
         {
             IRestService rest = new RestService();
-            Employee updatedEmployee = await rest.PutEmployeeAsync(Employees);
+            Employee updatedEmployee = await rest.PutEmployeeAsync(Employee);
             return updatedEmployee;
         }
 

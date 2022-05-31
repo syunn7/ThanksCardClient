@@ -27,6 +27,7 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<MainWindow>();
             containerRegistry.RegisterForNavigation<Header>();
             containerRegistry.RegisterForNavigation<Logon>();
+            containerRegistry.RegisterForNavigation<Logonx>();
             containerRegistry.RegisterForNavigation<Footer>();
             containerRegistry.RegisterForNavigation<ThanksCardCreate>();
             containerRegistry.RegisterForNavigation<ThanksCardList>();
@@ -39,7 +40,6 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<TagMst>();
             containerRegistry.RegisterForNavigation<TagCreate>();
             containerRegistry.RegisterForNavigation<TagEdit>();
-            containerRegistry.RegisterForNavigation<Logons>();
         }
     }
 }

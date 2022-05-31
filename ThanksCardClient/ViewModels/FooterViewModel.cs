@@ -14,17 +14,17 @@ namespace ThanksCardClient.ViewModels
     {
         private readonly IRegionManager regionManager;
 
-        private User _AuthorizedUser;
-        public User AuthorizedUser
+        private Employee _AuthorizedEmployee;
+        public Employee AuthorizedEmployee
         {
-            get { return _AuthorizedUser; }
-            set { SetProperty(ref _AuthorizedUser, value); }
+            get { return _AuthorizedEmployee; }
+            set { SetProperty(ref _AuthorizedEmployee, value); }
         }
 
         public FooterViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
-            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this.AuthorizedEmployee = SessionService.Instance.AuthorizedEmployee;
         }
 
         #region ShowThanksCardCreateCommand
@@ -89,7 +89,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteLogoffCommand()
         {
-            SessionService.Instance.AuthorizedUser = null;
+            SessionService.Instance.AuthorizedEmployee = null;
             SessionService.Instance.IsAuthorized = false;
 
             // HeaderRegion, FooterRegion を破棄して、ContentRegion をログオン画面に遷移させる。

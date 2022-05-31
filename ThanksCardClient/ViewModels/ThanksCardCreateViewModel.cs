@@ -25,38 +25,38 @@ namespace ThanksCardClient.ViewModels
         #endregion
 
         #region FromUsersProperty
-        private List<User> _FromUsers;
-        public List<User> FromUsers
+        private List<Employee> _FromEmployees;
+        public List<Employee> FromEmployees
         {
-            get { return _FromUsers; }
-            set { SetProperty(ref _FromUsers, value); }
+            get { return _FromEmployees; }
+            set { SetProperty(ref _FromEmployees, value); }
         }
         #endregion
 
         #region ToUsersProperty
-        private List<User> _ToUsers;
-        public List<User> ToUsers
+        private List<Employee> _ToEmployees;
+        public List<Employee> ToEmployees
         {
-            get { return _ToUsers; }
-            set { SetProperty(ref _ToUsers, value); }
+            get { return _ToEmployees; }
+            set { SetProperty(ref _ToEmployees, value); }
         }
         #endregion
 
         #region DepartmentsProperty
-        private List<Department> _Departments;
-        public List<Department> Departments
+        private List<Organization> _Organizations;
+        public List<Organization> Organizations
         {
-            get { return _Departments; }
-            set { SetProperty(ref _Departments, value); }
+            get { return _Organizations; }
+            set { SetProperty(ref _Organizations, value); }
         }
         #endregion
 
         #region TagsProperty
-        private List<Tag> _Tags;
-        public List<Tag> Tags
+        private List<Classification> _Classifications;
+        public List<Classification> Classifications
         {
-            get { return _Tags; }
-            set { SetProperty(ref _Tags, value); }
+            get { return _Classifications; }
+            set { SetProperty(ref _Classifications, value); }
         }
         #endregion
 
@@ -71,17 +71,17 @@ namespace ThanksCardClient.ViewModels
         {
             this.ThanksCard = new ThanksCard();
             
-            if (SessionService.Instance.AuthorizedUser != null)
+            if (SessionService.Instance.AuthorizedEmployee != null)
             {
-                this.FromUsers = await SessionService.Instance.AuthorizedUser.GetUsersAsync();
-                this.ToUsers = this.FromUsers;
+                this.FromEmployees = await SessionService.Instance.AuthorizedEmployee.GetEmployeesAsync();
+                this.ToEmployees = this.FromEmployees;
             }
 
-            var tag = new Tag();
-            this.Tags = await tag.GetTagsAsync();
+            var classification = new Classification();
+            this.Classifications = await classification.GetClassificationsAsync();
 
-            var dept = new Department();
-            this.Departments = await dept.GetDepartmentsAsync();
+            var organization = new Organization();
+            this.Organizations = await organization.GetOrganizationsAsync();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
@@ -101,7 +101,7 @@ namespace ThanksCardClient.ViewModels
 
         async void ExecuteFromDepartmentsChangedCommand(long? FromDepartmentId)
         {
-            this.FromUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(FromDepartmentId);
+            this.FromEmployees = await SessionService.Instance.AuthorizedEmployee.GetOrganizationUsersAsync(FromOrganizationId);
         }
         #endregion
 
@@ -126,10 +126,10 @@ namespace ThanksCardClient.ViewModels
             System.Diagnostics.Debug.WriteLine(this.Tags);
 
             //選択された Tag を取得し、ThanksCard.ThanksCardTags にセットする。
-            List<ThanksCardTag> ThanksCardTags = new List<ThanksCardTag>();
+            List<ThanksCardClassification> ThanksCardTags = new List<ThanksCardClassification>();
             foreach (var tag in this.Tags.Where(t => t.Selected))
             {
-                ThanksCardTag thanksCardTag = new ThanksCardTag();
+                ThanksCardClassification thanksCardTag = new ThanksCardClassification();
                 thanksCardTag.TagId = tag.Id;
                 ThanksCardTags.Add(thanksCardTag);
             }
