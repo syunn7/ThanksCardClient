@@ -26,15 +26,15 @@ namespace ThanksCardClient.Services
             this.Client = new HttpClient(handler);
             this.BaseUrl = "https://localhost:5000";
         }
-        public async Task<User> LogonAsync(User user)
+        public async Task<Employee> LogonAsync(Employee employee)
         {
-            User responseUser = null;
+            Employee responseEmployee = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Logon", user);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Logon", employee);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseUser = await response.Content.ReadFromJsonAsync<User>();
+                    responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
                 }
             }
             catch (Exception e)
@@ -42,170 +42,170 @@ namespace ThanksCardClient.Services
                 // TODO
                 System.Diagnostics.Debug.WriteLine("Exception in RestService.LogonAsync: " + e);
             }
-            return responseUser;
+            return responseEmployee;
         }
 
-        public async Task<List<User>> GetDepartmentUsersAsync(long? DepartmentId)
+        public async Task<List<Employee>> GetOrganizationUsersAsync(long? OrganizationId)
         {
-            List<User> responseUsers = null;
+            List<Employee> responseEmployees = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/DepartmentUsers/" + DepartmentId);
+                var response = await Client.GetAsync(this.BaseUrl + "/api/OrganizationUsers/" + OrganizationId);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseUsers = await response.Content.ReadFromJsonAsync<List<User>>();
+                    responseEmployees = await response.Content.ReadFromJsonAsync<List<Employee>>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetUsersAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetEmployeesAsync: " + e);
             }
-            return responseUsers;
+            return responseEmployees;
         }
 
-        public async Task<List<User>> GetUsersAsync()
+        public async Task<List<Employee>> GetEmployeesAsync()
         {
-            List<User> responseUsers = null;
+            List<Employee> responseEmployees = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Users");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Employees");
                 if (response.IsSuccessStatusCode)
                 {
-                    responseUsers = await response.Content.ReadFromJsonAsync<List<User>>();
+                    responseEmployees = await response.Content.ReadFromJsonAsync<List<Employee>>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetUsersAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetEmployeesAsync: " + e);
             }
-            return responseUsers;
+            return responseEmployees;
         }
 
-        public async Task<User> PostUserAsync(User user)
+        public async Task<Employee> PostEmployeeAsync(Employee employee)
         {
-            User responseUser = null;
+            Employee responseEmployee = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Users", user);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Employees", employee);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseUser = await response.Content.ReadFromJsonAsync<User>();
+                    responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostUserAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostEmployeeAsync: " + e);
             }
-            return responseUser;
+            return responseEmployee;
         }
 
-        public async Task<User> PutUserAsync(User user)
+        public async Task<Employee> PutEmployeeAsync(Employee employee)
         {
-            User responseUser = null;
+            Employee responseEmployee = null;
             try
             {
-                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Users/" + user.Id, user);
+                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Employees/" + employee.Id, employee);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseUser = await response.Content.ReadFromJsonAsync<User>();
+                    responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutUserAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutEmployeeAsync: " + e);
             }
-            return responseUser;
+            return responseEmployee;
         }
 
-        public async Task<User> DeleteUserAsync(long Id)
+        public async Task<Employee> DeleteEmployeeAsync(long Id)
         {
-            User responseUser = null;
+            Employee responseEmployee = null;
             try
             {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Users/" + Id);
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Employees/" + Id);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseUser = await response.Content.ReadFromJsonAsync<User>();
+                    responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteUserAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteEmployeeAsync: " + e);
             }
-            return responseUser;
+            return responseEmployee;
         }
 
-        public async Task<List<Department>> GetDepartmentsAsync()
+        public async Task<List<Organization>> GetOrganizationsAsync()
         {
-            List<Department> responseDepartments = null;
+            List<Organization> responseOrganizations = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Departments");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Organizations");
                 if (response.IsSuccessStatusCode)
                 {
-                    responseDepartments = await response.Content.ReadFromJsonAsync<List<Department>>();
+                    responseOrganizations = await response.Content.ReadFromJsonAsync<List<Organization>>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetDepartmentsAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetOrganizationsAsync: " + e);
             }
-            return responseDepartments;
+            return responseOrganizations;
         }
 
-        public async Task<Department> PostDepartmentAsync(Department department)
+        public async Task<Organization> PostOrganizationAsync(Organization organization)
         {
-            Department responseDepartment = null;
+            Organization responseOrganization = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Departments", department);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Organizations", organization);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    responseDepartment = await response.Content.ReadFromJsonAsync<Department>();
+                    responseOrganization = await response.Content.ReadFromJsonAsync<Organization>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostDepartmentAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostOrganizationAsync: " + e);
             }
-            return responseDepartment;
+            return responseOrganization;
         }
 
-        public async Task<Department> PutDepartmentAsync(Department department)
+        public async Task<Organization> PutOrganizationAsync(Organization organization)
         {
-            Department responseDepartment = null;
+            Organization responseOrganization = null;
             try
             {
-                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Departments/" + department.Id, department);
+                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Organizations/" + organization.Id, organization);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseDepartment = await response.Content.ReadFromJsonAsync<Department>();
+                    responseOrganization = await response.Content.ReadFromJsonAsync<Organization>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutDepartmentAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutOrganizationAsync: " + e);
             }
-            return responseDepartment;
+            return responseOrganization;
         }
 
-        public async Task<Department> DeleteDepartmentAsync(long Id)
+        public async Task<Organization> DeleteOrganizationAsync(long Id)
         {
-            Department responseDepartment = null;
+            Organization responseOrganization = null;
             try
             {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Departments/" + Id);
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Organizations/" + Id);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseDepartment = await response.Content.ReadFromJsonAsync<Department>();
+                    responseOrganization = await response.Content.ReadFromJsonAsync<Organization>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteDepartmentAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteOrganizationAsync: " + e);
             }
-            return responseDepartment;
+            return responseOrganization;
         }
 
         public async Task<List<ThanksCard>> GetThanksCardsAsync()
@@ -244,76 +244,76 @@ namespace ThanksCardClient.Services
             return responseThanksCard;
         }
 
-        public async Task<List<Tag>> GetTagsAsync()
+        public async Task<List<Classification>> GetClassificationsAsync()
         {
-            List<Tag> responseTags = null;
+            List<Classification> responseClassifications = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Tags");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Classifications");
                 if (response.IsSuccessStatusCode)
                 {
-                    responseTags = await response.Content.ReadFromJsonAsync<List<Tag>>();
+                    responseClassifications = await response.Content.ReadFromJsonAsync<List<Classification>>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetTagsAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetClassificationsAsync: " + e);
             }
-            return responseTags;
+            return responseClassifications;
         }
 
-        public async Task<Tag> PostTagAsync(Tag tag)
+        public async Task<Classification> PostClassificationAsync(Classification classification)
         {
-            Tag responseTag = null;
+            Classification responseClassification = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Tags", tag);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Classifications", classification);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseTag = await response.Content.ReadFromJsonAsync<Tag>();
+                    responseClassification = await response.Content.ReadFromJsonAsync<Classification>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostTagAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PostClassificationAsync: " + e);
             }
-            return responseTag;
+            return responseClassification;
         }
 
-        public async Task<Tag> PutTagAsync(Tag tag)
+        public async Task<Classification> PutClassificationAsync(Classification classification)
         {
-            Tag responseTag = null;
+            Classification responseClassification = null;
             try
             {
-                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Tags/" + tag.Id, tag);
+                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Classifications/" + classification.Id, classification);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseTag = await response.Content.ReadFromJsonAsync<Tag>();
+                    responseClassification = await response.Content.ReadFromJsonAsync<Classification>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutTagAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.PutClassificationAsync: " + e);
             }
-            return responseTag;
+            return classification;
         }
 
-        public async Task<Tag> DeleteTagAsync(long Id)
+        public async Task<Classification> DeleteClassificationAsync(long Id)
         {
-            Tag responseTag = null;
+            Classification responseClassification = null;
             try
             {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Tags/" + Id);
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Classifications/" + Id);
                 if (response.IsSuccessStatusCode)
                 {
-                    responseTag = await response.Content.ReadFromJsonAsync<Tag>();
+                    responseClassification = await response.Content.ReadFromJsonAsync<Classification>();
                 }
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteTagAsync: " + e);
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.DeleteClassificationAsync: " + e);
             }
-            return responseTag;
+            return responseClassification;
         }
     }
 }

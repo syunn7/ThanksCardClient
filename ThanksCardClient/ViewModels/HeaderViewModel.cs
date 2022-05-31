@@ -11,15 +11,15 @@ namespace ThanksCardClient.ViewModels
 {
     public class HeaderViewModel : BindableBase
     {
-        private User _AuthorizedUser;
-        public User AuthorizedUser
+        private Employee _AuthorizedEmployee;
+        public Employee AuthorizedEmployee
         {
-            get { return _AuthorizedUser; }
-            set { SetProperty(ref _AuthorizedUser, value); }
+            get { return _AuthorizedEmployee; }
+            set { SetProperty(ref _AuthorizedEmployee, value); }
         }
         public HeaderViewModel()
         {
-            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
+            this.AuthorizedEmployee = SessionService.Instance.AuthorizedEmployee;
         }
     }
 }

@@ -84,8 +84,8 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region ThanksCardTagsProperty
-        private List<ThanksCardTag> _ThanksCardTags;
-        public List<ThanksCardTag> ThanksCardTags
+        private List<ThanksCardClassification> _ThanksCardTags;
+        public List<ThanksCardClassification> ThanksCardTags
         {
             get { return _ThanksCardTags; }
             set { SetProperty(ref _ThanksCardTags, value); }

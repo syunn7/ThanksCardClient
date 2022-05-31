@@ -11,31 +11,31 @@ namespace ThanksCardClient.Services
     interface IRestService
     {
         // Logon REST API Client
-        Task<User> LogonAsync(User user);
+        Task<Employee> LogonAsync(Employee employee);
 
         // DepartmentUsers REST API Client
-        Task<List<User>> GetDepartmentUsersAsync(long? DepartmentId);
+        Task<List<Employee>> GetOrganizationUsersAsync(long? OrganizationId);
 
         // User REST API Client
-        Task<List<User>> GetUsersAsync();
-        Task<User> PostUserAsync(User user);
-        Task<User> PutUserAsync(User user);
-        Task<User> DeleteUserAsync(long Id);
+        Task<List<Employee>> GetEmployeesAsync();
+        Task<Employee> PostEmployeeAsync(Employee employee);
+        Task<Employee> PutEmployeeAsync(Employee employee);
+        Task<Employee> DeleteEmployeeAsync(long Id);
 
         // Department REST API Client
-        Task<List<Department>> GetDepartmentsAsync();
-        Task<Department> PostDepartmentAsync(Department department);
-        Task<Department> PutDepartmentAsync(Department department);
-        Task<Department> DeleteDepartmentAsync(long Id);
+        Task<List<Organization>> GetOrganizationsAsync();
+        Task<Organization> PostOrganizationAsync(Organization organization);
+        Task<Organization> PutOrganizationAsync(Organization organization);
+        Task<Organization> DeleteOrganizationAsync(long Id);
 
         // TanksCard REST API Client
         Task<List<ThanksCard>> GetThanksCardsAsync();
         Task<ThanksCard> PostThanksCardAsync(ThanksCard thanksCard);
 
         // Tag REST API Client
-        Task<List<Tag>> GetTagsAsync();
-        Task<Tag> PostTagAsync(Tag tag);
-        Task<Tag> PutTagAsync(Tag tag);
-        Task<Tag> DeleteTagAsync(long Id);
+        Task<List<Classification>> GetClassificationsAsync();
+        Task<Classification> PostClassificationAsync(Classification Classifications);
+        Task<Classification> PutClassificationAsync(Classification Classifications);
+        Task<Classification> DeleteClassificationAsync(long Id);
     }
 }
