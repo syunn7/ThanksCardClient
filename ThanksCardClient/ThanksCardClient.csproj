@@ -8,8 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\パスワードテキスト.png" />
+    <None Remove="Views\ユーザーテキストボックス.png" />
+    <None Remove="Views\ログインボタン.png" />
+    <None Remove="Views\ログイン画面 .png" />
+    <None Remove="Views\ログイン画面.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Prism.Core" Version="8.1.97" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\パスワードテキスト.png" />
+    <Resource Include="Views\ユーザーテキストボックス.png" />
+    <Resource Include="Views\ログインボタン.png" />
+    <Resource Include="Views\ログイン画面 .png" />
+    <Resource Include="Views\ログイン画面.png" />
   </ItemGroup>
 
 </Project>
