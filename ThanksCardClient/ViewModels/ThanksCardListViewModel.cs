@@ -1,4 +1,4 @@
-﻿/*
+﻿
 #nullable disable
 using Prism.Commands;
 using Prism.Mvvm;
@@ -82,4 +82,3 @@ namespace ThanksCardClient.ViewModels
         #endregion
     }
 }
-*/

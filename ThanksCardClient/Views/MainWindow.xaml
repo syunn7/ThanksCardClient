@@ -8,11 +8,8 @@
         xmlns:local="clr-namespace:ThanksCardClient">
     <Grid>
         <StackPanel>
-            <ContentControl prism:RegionManager.RegionName="HeaderRegion" />
-            <Border Background="AliceBlue" Height="15"/>
-            <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-            <Border Background="AliceBlue" Height="15"/>
-            <ContentControl prism:RegionManager.RegionName="FooterRegion" />
+
+            <ContentControl prism:RegionManager.RegionName="MainRegion" Height="720" Width="1366" />
         </StackPanel>
     </Grid>
 </Window>

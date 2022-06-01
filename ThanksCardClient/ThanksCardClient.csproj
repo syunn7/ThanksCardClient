@@ -8,11 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ViewModels\ホーム画面.png" />
     <None Remove="Views\パスワードテキスト.png" />
+    <None Remove="Views\ホーム画面 %281%29.png" />
+    <None Remove="Views\ホーム画面.png" />
     <None Remove="Views\ユーザーテキストボックス.png" />
+    <None Remove="Views\ログアウトボタン.png" />
     <None Remove="Views\ログインボタン.png" />
+    <None Remove="Views\ログイン画面 %281%29.png" />
+    <None Remove="Views\ログイン画面 %283%29.png" />
+    <None Remove="Views\ログイン画面 %284%29.png" />
     <None Remove="Views\ログイン画面 .png" />
     <None Remove="Views\ログイン画面.png" />
+    <None Remove="Views\ログイン画面full %281%29.png" />
+    <None Remove="Views\ログイン画面full.png" />
+    <None Remove="Views\過去一覧ボタン.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +31,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="ViewModels\ホーム画面.png" />
     <Resource Include="Views\パスワードテキスト.png" />
+    <Resource Include="Views\ホーム画面 (1).png" />
+    <Resource Include="Views\ホーム画面.png" />
     <Resource Include="Views\ユーザーテキストボックス.png" />
+    <Resource Include="Views\ログアウトボタン.png" />
     <Resource Include="Views\ログインボタン.png" />
+    <Resource Include="Views\ログイン画面 (1).png" />
+    <Resource Include="Views\ログイン画面 (3).png" />
+    <Resource Include="Views\ログイン画面 (4).png" />
     <Resource Include="Views\ログイン画面 .png" />
     <Resource Include="Views\ログイン画面.png" />
+    <Resource Include="Views\ログイン画面full (1).png" />
+    <Resource Include="Views\ログイン画面full.png" />
+    <Resource Include="Views\過去一覧ボタン.png" />
   </ItemGroup>
 
 </Project>

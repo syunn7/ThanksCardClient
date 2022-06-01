@@ -27,8 +27,9 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<MainWindow>();
             containerRegistry.RegisterForNavigation<Header>();
             containerRegistry.RegisterForNavigation<Logon>();
-            containerRegistry.RegisterForNavigation<Logonx>();
+            containerRegistry.RegisterForNavigation<Login>();
             containerRegistry.RegisterForNavigation<Footer>();
+            containerRegistry.RegisterForNavigation<Home>();
             containerRegistry.RegisterForNavigation<ThanksCardCreate>();
             containerRegistry.RegisterForNavigation<ThanksCardList>();
             containerRegistry.RegisterForNavigation<UserMst>();

@@ -1,4 +1,5 @@
-﻿#nullable disable
+﻿
+#nullable disable
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -11,7 +12,7 @@ using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class LogonxViewModel : BindableBase
+    public class LoginViewModel : BindableBase
     {
         private IRegionManager regionManager;
 
@@ -33,7 +34,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        public LogonxViewModel(IRegionManager regionManager)
+        public LoginViewModel(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
 
@@ -43,12 +44,12 @@ namespace ThanksCardClient.ViewModels
             this.Employee.Password = "admin";
         }
 
-        #region LogonxCommand
-        private DelegateCommand _LogonxCommand;
-        public DelegateCommand LogonxCommand =>
-            _LogonxCommand ?? (_LogonxCommand = new DelegateCommand(ExecuteLogonxCommandAsync));
+        #region LoginCommand
+        private DelegateCommand _LoginCommand;
+        public DelegateCommand LoginCommand =>
+            _LoginCommand ?? (_LoginCommand = new DelegateCommand(ExecuteLogonCommandAsync));
 
-        async void ExecuteLogonxCommandAsync()
+        async void ExecuteLogonCommandAsync()
         {
             Employee authorizedEmployee = await this.Employee.LogonAsync();
 
@@ -58,9 +59,10 @@ namespace ThanksCardClient.ViewModels
                 SessionService.Instance.IsAuthorized = true;
                 SessionService.Instance.AuthorizedEmployee = authorizedEmployee;
                 this.ErrorMessage = "";
-                this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
-                this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
-                this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+                //this.regionManager.RequestNavigate("HeaderRegion", nameof(Views.Header));
+                //this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+                //this.regionManager.RequestNavigate("FooterRegion", nameof(Views.Footer));
+                this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
             }
             else
             {

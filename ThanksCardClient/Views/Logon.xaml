@@ -12,9 +12,9 @@
         <StackPanel>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red"/>
             <TextBlock Text="Name:"/>
-            <TextBox Text="{Binding User.Name}"/>
+            <TextBox Text="{Binding Employee.EmployeeCd}"/>
             <TextBlock Text="Password:"/>
-            <TextBox Text="{Binding User.Password}"/>
+            <TextBox Text="{Binding Employee.Password}"/>
             <Button Content="Logon" Command="{Binding LogonCommand}"/>
         </StackPanel>
     </Grid>
