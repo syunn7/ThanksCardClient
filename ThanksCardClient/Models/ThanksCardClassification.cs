@@ -47,11 +47,11 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region TagProperty
-        private Tag _Tag;
-        public Tag Tag
+        private Classification _Classification;
+        public Classification Classification
         {
-            get { return _Tag; }
-            set { SetProperty(ref _Tag, value); }
+            get { return _Classification; }
+            set { SetProperty(ref _Classification, value); }
         }
         #endregion
     }

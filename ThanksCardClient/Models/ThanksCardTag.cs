@@ -1,4 +1,5 @@
-﻿#nullable disable
+﻿/*
+#nullable disable
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -56,3 +57,4 @@ namespace ThanksCardClient.Models
         #endregion
     }
 }
+*/
