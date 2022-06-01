@@ -1,24 +1,26 @@
 ﻿<UserControl x:Class="ThanksCardClient.Views.Login"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ThanksCardClient.Views"
              mc:Ignorable="d" Width="1366" Height="720">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/ログイン画面 (4).png"/>
+            <ImageBrush ImageSource="/Views/ログイン画面.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="80" Margin="409,0,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeCd}" VerticalAlignment="Center" Width="500">
+        <TextBox HorizontalAlignment="Center" Height="65" Margin="0,312,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeCd}" VerticalAlignment="Top" Width="600" FontSize="72" Padding="80,-19,0,0">
             <TextBox.Background>
-                <ImageBrush ImageSource="/Views/ユーザーテキストボックス.png"/>
+                <ImageBrush ImageSource="/Views/社員コード.png"/>
             </TextBox.Background>
         </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="80" Margin="409,448,0,0" TextWrapping="Wrap" Text="{Binding Employee.Password}" VerticalAlignment="Top" Width="500">
+        <TextBox HorizontalAlignment="Center" Height="65" Margin="0,436,0,0" TextWrapping="Wrap" Text="{Binding Employee.Password}" VerticalAlignment="Top" Width="600" FontSize="72" Padding="80,-19,0,0">
             <TextBox.Background>
-                <ImageBrush ImageSource="/Views/パスワードテキスト.png"/>
+                <ImageBrush ImageSource="/Views/パスワード.png"/>
             </TextBox.Background>
         </TextBox>
-        <Button Content="" HorizontalAlignment="Center" Height="65" Margin="0,579,0,0" VerticalAlignment="Top" Width="235" Opacity="0" Command="{Binding LoginCommand}"/>
+        <Button Content="" HorizontalAlignment="Center" Height="70" Margin="0,579,0,0" VerticalAlignment="Top" Width="250" Opacity="0" Command="{Binding LoginCommand}"/>
     </Grid>
 </UserControl>
