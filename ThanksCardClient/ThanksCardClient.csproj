@@ -16,6 +16,7 @@
     <None Remove="Views\受信BOX画面 %281%29.png" />
     <None Remove="Views\感謝カード作成画面 .png" />
     <None Remove="Views\社員コード.png" />
+    <None Remove="Views\表示画面.png" />
     <None Remove="Views\送信BOX画面.png" />
   </ItemGroup>
 
@@ -33,6 +34,7 @@
     <Resource Include="Views\受信BOX画面 (1).png" />
     <Resource Include="Views\感謝カード作成画面 .png" />
     <Resource Include="Views\社員コード.png" />
+    <Resource Include="Views\表示画面.png" />
     <Resource Include="Views\送信BOX画面.png" />
   </ItemGroup>
 
