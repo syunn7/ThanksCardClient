@@ -38,7 +38,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region PastListCommand
+        /*#region PastListCommand
         private DelegateCommand _PastListCommand;
         public DelegateCommand PastListCommand =>
             _PastListCommand ?? (_PastListCommand = new DelegateCommand(ExecutePastListCommand));
@@ -47,7 +47,7 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.PastList));
         }
-        #endregion
+        #endregion*/
 
         #region ReceiveBoxCommand
         private DelegateCommand _ReceiveBoxCommand; 
@@ -62,7 +62,7 @@ namespace ThanksCardClient.ViewModels
 
         #region SendBoxCommand
         private DelegateCommand _SendBoxCommand; 
-        public DelegateCommand SendBoxBoxCommand =>
+        public DelegateCommand SendBoxCommand =>
             _SendBoxCommand ?? (_SendBoxCommand = new DelegateCommand(ExecuteSendBoxCommand));
 
         void ExecuteSendBoxCommand()
@@ -71,7 +71,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region EmployeeMgCommand
+        /*#region EmployeeMgCommand
         private DelegateCommand _EmployeeMgCommand;
         public DelegateCommand EmployeeMgCommand =>
             _EmployeeMgCommand ?? (_EmployeeMgCommand = new DelegateCommand(ExecuteEmployeeMgCommand));
@@ -124,7 +124,7 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.DetailList));
         }
-        #endregion
+        #endregion*/
 
         #region ManualCommand
         private DelegateCommand _ManualCommand;
