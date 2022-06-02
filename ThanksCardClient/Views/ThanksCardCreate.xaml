@@ -16,11 +16,11 @@
             <TextBox Text="{Binding ThanksCard.Body}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="部署:"/>
-                <ComboBox x:Name="FromDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
+                <ComboBox x:Name="FromOrganizations" ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValuePath="Id">
                     <!-- Deparment が選択されたら FromDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding FromDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=FromDepartments, Path=SelectedValue}"/>
+                            <i:InvokeCommandAction Command="{Binding FromOrganizationsChangedCommand}" CommandParameter="{Binding ElementName=FromOrganizations, Path=SelectedValue}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
@@ -29,16 +29,16 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="部署:"/>
-                <ComboBox x:Name="ToDepartments" ItemsSource="{Binding Departments}" DisplayMemberPath="Name" SelectedValuePath="Id">
+                <ComboBox x:Name="ToOrganizations" ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValuePath="Id">
                     <!-- Deparment が選択されたら ToDepartmentsChangedCommand を発行する -->
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding ToDepartmentsChangedCommand}" CommandParameter="{Binding ElementName=ToDepartments, Path=SelectedValue}"/>
+                            <i:InvokeCommandAction Command="{Binding ToOrganizationsChangedCommand}" CommandParameter="{Binding ElementName=ToOrganizations, Path=SelectedValue}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
                 <TextBlock Text="To:"/>
-                <ComboBox ItemsSource="{Binding ToUsers}" DisplayMemberPath="Name" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id"/>
+                <ComboBox ItemsSource="{Binding ToEmployees}" DisplayMemberPath="EmployeeName" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id"/>
             </StackPanel>
             <TextBlock Text="作成日:"/>
             <DatePicker SelectedDate="{Binding ThanksCard.CreatedDateTime}"/>

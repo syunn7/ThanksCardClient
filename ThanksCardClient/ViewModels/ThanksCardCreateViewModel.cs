@@ -95,25 +95,25 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        #region FromDepartmentsChangedCommand
-        private DelegateCommand<long?> _FromDepartmentsChangedCommand;
-        public DelegateCommand<long?> FromDepartmentsChangedCommand =>
-            _FromDepartmentsChangedCommand ?? (_FromDepartmentsChangedCommand = new DelegateCommand<long?>(ExecuteFromDepartmentsChangedCommand));
+        #region FromOrganizationsChangedCommand
+        private DelegateCommand<long?> _FromOrganizationsChangedCommand;
+        public DelegateCommand<long?> FromOrganizationsChangedCommand =>
+            _FromOrganizationsChangedCommand ?? (_FromOrganizationsChangedCommand = new DelegateCommand<long?>(ExecuteFromOrganizationsChangedCommand));
 
-        async void ExecuteFromDepartmentsChangedCommand(long? FromDepartmentId)
+        async void ExecuteFromOrganizationsChangedCommand(long? FromOrganizationId)
         {
             this.FromEmployees = await SessionService.Instance.AuthorizedEmployee.GetOrganizationUsersAsync(FromOrganizationId);
         }
         #endregion
 
-        #region ToDepartmentsChangedCommand
-        private DelegateCommand<long?> _ToDepartmentsChangedCommand;
-        public DelegateCommand<long?> ToDepartmentsChangedCommand =>
-            _ToDepartmentsChangedCommand ?? (_ToDepartmentsChangedCommand = new DelegateCommand<long?>(ExecuteToDepartmentsChangedCommand));
+        #region ToOrganizationsChangedCommand
+        private DelegateCommand<long?> _ToOrganizationsChangedCommand;
+        public DelegateCommand<long?> ToOrganizationsChangedCommand =>
+            _ToOrganizationsChangedCommand ?? (_ToOrganizationsChangedCommand = new DelegateCommand<long?>(ExecuteToOrganizationsChangedCommand));
 
-        async void ExecuteToDepartmentsChangedCommand(long? ToDepartmentId)
+        async void ExecuteToOrganizationsChangedCommand(long? ToDepartmentId)
         {
-            this.ToUsers = await SessionService.Instance.AuthorizedUser.GetDepartmentUsersAsync(ToDepartmentId);
+            this.ToEmployees = await SessionService.Instance.AuthorizedEmployee.GetOrganizationUsersAsync(ToDepartmentId);
         }
         #endregion
 
@@ -124,22 +124,22 @@ namespace ThanksCardClient.ViewModels
 
         async void ExecuteSubmitCommand()
         {
-            System.Diagnostics.Debug.WriteLine(this.Tags);
+            System.Diagnostics.Debug.WriteLine(this.Classifications);
 
             //選択された Tag を取得し、ThanksCard.ThanksCardTags にセットする。
-            List<ThanksCardClassification> ThanksCardTags = new List<ThanksCardClassification>();
-            foreach (var tag in this.Tags.Where(t => t.Selected))
+            List<ThanksCardClassification> ThanksCardClassifications = new List<ThanksCardClassification>();
+            foreach (var Classification in this.Classifications.Where(t => t.Selected))
             {
-                ThanksCardClassification thanksCardTag = new ThanksCardClassification();
-                thanksCardTag.TagId = tag.Id;
-                ThanksCardTags.Add(thanksCardTag);
+                ThanksCardClassification thanksCardClassification = new ThanksCardClassification();
+                thanksCardClassification.ClassificationId = Classification.Id;
+                ThanksCardClassifications.Add(thanksCardTag);
             }
-            this.ThanksCard.ThanksCardTags = ThanksCardTags;
+            this.ThanksCard.ThanksCardClassifications = ThanksCardClassifications;
 
             ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
 
             //TODO: Error handling
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.ThanksCardList));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.ThanksCardList));
 
         }
         #endregion

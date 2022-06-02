@@ -9,7 +9,7 @@
     <UserControl.Background>
         <ImageBrush/>
     </UserControl.Background>
-    <Grid>
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Visible">
         <Grid.Background>
             <ImageBrush ImageSource="/Views/送信BOX画面.png"/>
         </Grid.Background>

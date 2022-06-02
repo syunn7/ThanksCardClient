@@ -24,5 +24,10 @@ namespace ThanksCardClient.Views
         {
             InitializeComponent();
         }
+
+        private void ToOrganizations_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
