@@ -7,11 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1366">
     <UserControl.Background>
-        <ImageBrush ImageSource="/Views/送信BOX画面.png"/>
+        <ImageBrush/>
     </UserControl.Background>
-    <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="52" Margin="643,643,0,0" VerticalAlignment="Top" Width="152" Opacity="0">
-        <Button.Background>
-            <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
-        </Button.Background>
-    </Button>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/送信BOX画面.png"/>
+        </Grid.Background>
+        <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="50" Margin="644,642,0,0" VerticalAlignment="Top" Width="151" Opacity="0"/>
+    </Grid>
 </UserControl>
