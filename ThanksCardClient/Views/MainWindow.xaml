@@ -10,6 +10,7 @@
         <StackPanel>
 
             <ContentControl prism:RegionManager.RegionName="MainRegion" Height="720" Width="1366" />
+            
         </StackPanel>
     </Grid>
 </Window>
