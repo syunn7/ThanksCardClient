@@ -21,6 +21,6 @@
                 <ImageBrush ImageSource="/Views/パスワード.png"/>
             </TextBox.Background>
         </TextBox>
-        <Button Content="" HorizontalAlignment="Center" Height="70" Margin="0,579,0,0" VerticalAlignment="Top" Width="250" Opacity="0" Command="{Binding LoginCommand}"/>
+        <Button Content="" HorizontalAlignment="Center" Height="70" Margin="0,579,0,0" VerticalAlignment="Top" Width="250" Opacity="0" Command="{Binding LoginCommand}" IsDefault="True"/>
     </Grid>
 </UserControl>

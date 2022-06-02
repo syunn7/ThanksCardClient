@@ -11,6 +11,7 @@
     <None Remove="ViewModels\ホーム画面.png" />
     <None Remove="Views\パスワード.png" />
     <None Remove="Views\ホーム画面.png" />
+    <None Remove="Views\マニュアル画面.png" />
     <None Remove="Views\ログイン画面.png" />
     <None Remove="Views\感謝カード作成画面 .png" />
     <None Remove="Views\社員コード.png" />
@@ -25,6 +26,7 @@
     <Resource Include="ViewModels\ホーム画面.png" />
     <Resource Include="Views\パスワード.png" />
     <Resource Include="Views\ホーム画面.png" />
+    <Resource Include="Views\マニュアル画面.png" />
     <Resource Include="Views\ログイン画面.png" />
     <Resource Include="Views\感謝カード作成画面 .png" />
     <Resource Include="Views\社員コード.png" />
