@@ -71,7 +71,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        /*#region EmployeeMgCommand
+        #region EmployeeMgCommand
         private DelegateCommand _EmployeeMgCommand;
         public DelegateCommand EmployeeMgCommand =>
             _EmployeeMgCommand ?? (_EmployeeMgCommand = new DelegateCommand(ExecuteEmployeeMgCommand));
@@ -102,9 +102,9 @@ namespace ThanksCardClient.ViewModels
         {
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.ClassificationMg));
         }
-        #endregion
+        #endregion*/
 
-        #region AggregationCommand
+        /*#region AggregationCommand
         private DelegateCommand _AggregationCommand;
         public DelegateCommand AggregationCommand =>
             _AggregationCommand ?? (_AggregationCommand = new DelegateCommand(ExecuteAggregationCommand));
