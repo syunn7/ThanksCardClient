@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.Manual"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThanksCardClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1366">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Views/マニュアル画面.png"/>
+    </UserControl.Background>
+    <Grid>
+        <Button Command="{Binding HomeCommand}"  HorizontalAlignment="Center" Height="52" Margin="0,634,0,0" VerticalAlignment="Top" Width="153">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</UserControl>
