@@ -10,7 +10,7 @@
         <ImageBrush ImageSource="/Views/マニュアル画面.png"/>
     </UserControl.Background>
     <Grid>
-        <Button Command="{Binding HomeCommand}"  HorizontalAlignment="Center" Height="52" Margin="0,634,0,0" VerticalAlignment="Top" Width="153">
+        <Button Command="{Binding HomeCommand}"  HorizontalAlignment="Center" Height="52" Margin="0,634,0,0" VerticalAlignment="Top" Width="153" Opacity="0">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
             </Button.Background>

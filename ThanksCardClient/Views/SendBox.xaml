@@ -9,7 +9,7 @@
     <UserControl.Background>
         <ImageBrush ImageSource="/Views/送信BOX画面.png"/>
     </UserControl.Background>
-    <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="52" Margin="643,643,0,0" VerticalAlignment="Top" Width="152">
+    <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="52" Margin="643,643,0,0" VerticalAlignment="Top" Width="152" Opacity="0">
         <Button.Background>
             <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
         </Button.Background>
