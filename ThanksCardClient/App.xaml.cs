@@ -41,6 +41,7 @@ namespace ThanksCardClient
             //containerRegistry.RegisterForNavigation<ClassificationMg>();
             //containerRegistry.RegisterForNavigation<DetailList>();
             containerRegistry.RegisterForNavigation<Manual>();
+            containerRegistry.RegisterForNavigation<ThanksCardDisplay>();
             //containerRegistry.RegisterForNavigation<Aggregation>();
             containerRegistry.RegisterForNavigation<UserMst>();
             containerRegistry.RegisterForNavigation<UserCreate>();
