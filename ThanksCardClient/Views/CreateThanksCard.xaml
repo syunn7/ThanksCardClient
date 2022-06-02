@@ -17,8 +17,8 @@
         <TextBlock HorizontalAlignment="Left" Height="40" Margin="235,510,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="470" Background="White" FontSize="24" Opacity="0.8"/>
         <TextBlock HorizontalAlignment="Left" Height="40" Margin="235,560,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="470" Background="White" FontSize="24" Opacity="0.8"/>
         <DatePicker HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="470" Margin="235,605,0,0" FontSize="24" Opacity="0.9"/>
-        <Button Content="" HorizontalAlignment="Left" Height="50" Margin="895,602,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="1096,602,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
-        <Button Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,650,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
+        <Button Content="" HorizontalAlignment="Left" Height="50" Margin="895,602,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="1096,602,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
+        <Button Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,650,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding HomeCommand}" Cursor="Hand"/>
     </Grid>
 </UserControl>

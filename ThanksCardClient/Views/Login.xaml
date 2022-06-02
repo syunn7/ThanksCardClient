@@ -11,16 +11,16 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/ログイン画面.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Center" Height="65" Margin="0,312,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeCd}" VerticalAlignment="Top" Width="600" FontSize="72" Padding="80,-19,0,0">
+        <TextBox HorizontalAlignment="Center" Height="65" Margin="0,312,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeCd}" VerticalAlignment="Top" Width="600" FontSize="48" Padding="80,-8,0,0">
             <TextBox.Background>
                 <ImageBrush ImageSource="/Views/社員コード.png"/>
             </TextBox.Background>
         </TextBox>
-        <TextBox HorizontalAlignment="Center" Height="65" Margin="0,436,0,0" TextWrapping="Wrap" Text="{Binding Employee.Password}" VerticalAlignment="Top" Width="600" FontSize="72" Padding="80,-19,0,0">
+        <TextBox HorizontalAlignment="Center" Height="65" Margin="0,436,0,0" TextWrapping="Wrap" Text="{Binding Employee.Password}" VerticalAlignment="Top" Width="600" FontSize="48" Padding="80,-8,0,0">
             <TextBox.Background>
                 <ImageBrush ImageSource="/Views/パスワード.png"/>
             </TextBox.Background>
         </TextBox>
-        <Button Content="" HorizontalAlignment="Center" Height="70" Margin="0,579,0,0" VerticalAlignment="Top" Width="250" Opacity="0" Command="{Binding LoginCommand}" />
+        <Button Content="" HorizontalAlignment="Center" Height="70" Margin="0,579,0,0" VerticalAlignment="Top" Width="250" Opacity="0" Command="{Binding LoginCommand}" Cursor="Hand" />
     </Grid>
 </UserControl>

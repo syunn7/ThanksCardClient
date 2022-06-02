@@ -13,6 +13,6 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/マニュアル画面.png"/>
         </Grid.Background>
-        <Button Command="{Binding HomeCommand}" HorizontalAlignment="Center" Height="49" Margin="0,636,0,0" VerticalAlignment="Top" Width="149" Opacity="0"/>
+        <Button Command="{Binding HomeCommand}" HorizontalAlignment="Center" Height="50" Margin="0,636,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
     </Grid>
 </UserControl>
