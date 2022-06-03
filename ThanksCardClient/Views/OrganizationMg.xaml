@@ -10,25 +10,31 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/組織管理画面.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="259,188,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
-        <Button HorizontalAlignment="Left" Height="50" Margin="59,88,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
-        <Button HorizontalAlignment="Left" Height="49" Margin="260,88,0,0" VerticalAlignment="Top" Width="149" Opacity="0" Cursor="Hand"/>
         <Button HorizontalAlignment="Left" Height="49" Margin="610,88,0,0" VerticalAlignment="Top" Width="149" Opacity="0" Cursor="Hand"/>
         <Button  Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="49" Margin="610,631,0,0" VerticalAlignment="Top" Width="149" Opacity="0" Cursor="Hand"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="258,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="260,340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
-        <DataGrid Margin="638,232,88,232" d:ItemsSource="{Binding Organizations}" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" FontSize="24">
+        <DataGrid Margin="58,137,58,153" d:ItemsSource="{Binding Organizations}" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" FontSize="36" Width="1250" Height="430">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="コード" Binding="{Binding OrganizationCd}" />
-                <DataGridTextColumn Header="親組織" Binding="{Binding Parent.Name}" />
+                <DataGridTextColumn Header="親組織" Binding="{Binding Parent.OrganizationName}" />
                 <DataGridTextColumn Header="組織名" Binding="{Binding OrganizationName}" />
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
+                            <Button Content="編集" Command="{Binding DataContext.OrganizationEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.OrganizationDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="" HorizontalAlignment="Left" Height="81" Margin="174,525,0,0" VerticalAlignment="Top" Width="261">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-        </Button>
+        <Button Content="" Command="{Binding OrganizationCreateCommand}" HorizontalAlignment="Left" Height="50" Margin="4,46,0,0" VerticalAlignment="Top" Width="230" Opacity="0.013" Cursor="Hand"/>
     </Grid>
 </UserControl>
