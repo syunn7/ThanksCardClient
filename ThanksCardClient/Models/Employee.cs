@@ -58,12 +58,12 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region IsAdminProperty
-        /*private bool _IsAdmin;
+        private bool _IsAdmin;
         public bool IsAdmin
         {
             get { return _IsAdmin; }
             set { SetProperty(ref _IsAdmin, value); }
-        }*/
+        }
         #endregion
 
         #region OrganizationIdProperty

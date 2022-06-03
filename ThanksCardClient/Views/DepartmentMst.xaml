@@ -13,7 +13,7 @@
             <Button Content="+部署の新規作成" Command="{Binding DepartmentCreateCommand}" Width="100" HorizontalAlignment="Left"/>
 
             <!-- ユーザ一覧(Departmentモデルのリスト)である MainWindowViewModel.Departments をグリッド表示する。-->
-            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" CanUserAddRows="False" FontSize="24">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="コード" Binding="{Binding Code}" />

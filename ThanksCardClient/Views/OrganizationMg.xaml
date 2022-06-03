@@ -17,5 +17,18 @@
         <Button  Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="49" Margin="610,631,0,0" VerticalAlignment="Top" Width="149" Opacity="0" Cursor="Hand"/>
         <TextBox HorizontalAlignment="Left" Height="50" Margin="258,262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
         <TextBox HorizontalAlignment="Left" Height="50" Margin="260,340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
+        <DataGrid Margin="638,232,88,232" d:ItemsSource="{Binding Organizations}" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" FontSize="24">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="コード" Binding="{Binding OrganizationCd}" />
+                <DataGridTextColumn Header="親組織" Binding="{Binding Parent.Name}" />
+                <DataGridTextColumn Header="組織名" Binding="{Binding OrganizationName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="" HorizontalAlignment="Left" Height="81" Margin="174,525,0,0" VerticalAlignment="Top" Width="261">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>
