@@ -22,5 +22,6 @@
             </TextBox.Background>
         </TextBox>
         <Button Content="" HorizontalAlignment="Center" Height="70" Margin="0,579,0,0" VerticalAlignment="Top" Width="250" Opacity="0" Command="{Binding LoginCommand}" Cursor="Hand" />
+        <TextBlock Height="40" TextWrapping="Wrap" Text="{Binding ErrorMessage}" VerticalAlignment="Top" Width="1366" Margin="0,40,0,0" HorizontalAlignment="Center" FontSize="24" Foreground="#FFFF0303"/>
     </Grid>
 </UserControl>

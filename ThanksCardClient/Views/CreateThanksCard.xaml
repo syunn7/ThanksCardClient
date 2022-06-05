@@ -9,17 +9,17 @@
              mc:Ignorable="d" Width="1366" Height="710">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/感謝カード作成画面 .png"/>
+            <ImageBrush ImageSource="/Views/感謝カード作成画面.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="235,49,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Title}" VerticalAlignment="Top" Width="550" FontSize="24" Opacity="0.8"/>
-        <TextBox HorizontalAlignment="Left" Height="300" Margin="235,0,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Contents}" VerticalAlignment="Center" Width="1080" FontSize="24" Opacity="0.8"/>
-        <TextBlock HorizontalAlignment="Left" Height="40" Margin="235,510,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="470" Background="White" FontSize="24" Opacity="0.8"/>
-        <TextBlock HorizontalAlignment="Left" Height="40" Margin="235,560,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="470" Background="White" FontSize="24" Opacity="0.8"/>
-        <DatePicker HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="470" Margin="235,605,0,0" FontSize="24" Opacity="0.9" SelectedDate="{Binding ThanksCard.CreatedDateTime}"/>
-        <Button Content="" HorizontalAlignment="Left" Height="50" Margin="895,602,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand" Command="{Binding SubmitCommand}"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="1096,602,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand" Command="{Binding ClearCommand}"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="281,72,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Title}" VerticalAlignment="Top" Width="550" FontSize="24" Opacity="0.8"/>
+        <TextBox HorizontalAlignment="Left" Height="175" Margin="281,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="792" FontSize="24" Opacity="0.8" Text="{Binding ThanksCard.Contents}"/>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="281,407,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="470" Background="White" FontSize="24" Opacity="0.8"/>
+        <TextBlock HorizontalAlignment="Left" Height="40" Margin="281,456,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="470" Background="White" FontSize="24" Opacity="0.8"/>
+        <DatePicker HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="470" Margin="281,505,0,0" FontSize="24" Opacity="0.9" SelectedDate="{Binding ThanksCard.CreatedDateTime}" UseLayoutRounding="True"/>
+        <Button Content="" HorizontalAlignment="Left" Height="50" Margin="509,576,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand" Command="{Binding SubmitCommand}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="708,576,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand" Command="{Binding ClearCommand}"/>
         <Button Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,650,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding HomeCommand}" Cursor="Hand"/>
-        <ComboBox x:Name="ToOrganizations" ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValuePath="Id" HorizontalAlignment="Left" Height="40" Margin="235,98,0,0" VerticalAlignment="Top" Width="470" Opacity="0.8">
+        <ComboBox x:Name="ToOrganizations" ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValuePath="Id" HorizontalAlignment="Left" Height="40" Margin="281,121,0,0" VerticalAlignment="Top" Width="470" Opacity="0.8">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1">
                     <GradientStop Color="#FFF0F0F0"/>
@@ -32,7 +32,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ComboBox>
-        <ComboBox ItemsSource="{Binding ToEmployees}" DisplayMemberPath="EmployeeName" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="40" Margin="235,147,0,0" VerticalAlignment="Top" Width="470" Opacity="0.8"/>
-        <ListBox ItemsSource="{Binding Classifications}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name" Margin="829,98,288,523" Height="90" Width="250" FontSize="24" Opacity="0.8"/>
+        <ComboBox ItemsSource="{Binding ToEmployees}" DisplayMemberPath="EmployeeName" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="40" Margin="281,170,0,0" VerticalAlignment="Top" Width="470" Opacity="0.8"/>
+        <ListBox ItemsSource="{Binding Classifications}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name" Margin="856,126,293,500" FontSize="24" Opacity="0.8"/>
     </Grid>
 </UserControl>
