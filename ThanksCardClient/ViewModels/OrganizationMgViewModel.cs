@@ -41,11 +41,11 @@ namespace ThanksCardClient.ViewModels
         {
             this.UpdateOrganizations();
         }
-
+        
         private async void UpdateOrganizations()
         {
-            Organization dept = new Organization();
-            this.Organizations = await dept.GetOrganizationsAsync();
+            Organization organization = new Organization();
+            this.Organizations = await organization.GetOrganizationsAsync();
         }
 
         #region OrganizationCreateCommand
@@ -55,7 +55,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteOrganizationCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OrganizationCreate));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.OrganizationCreate));
         }
         #endregion
 
@@ -70,7 +70,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedOrganization", SelectedOrganization);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OrganizationEdit), parameters);
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.OrganizationEdit), parameters);
         }
         #endregion
 

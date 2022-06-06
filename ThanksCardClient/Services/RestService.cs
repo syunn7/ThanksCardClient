@@ -68,7 +68,7 @@ namespace ThanksCardClient.Services
             List<Employee> responseEmployees = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Employees");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Employee");
                 if (response.IsSuccessStatusCode)
                 {
                     responseEmployees = await response.Content.ReadFromJsonAsync<List<Employee>>();
@@ -86,7 +86,7 @@ namespace ThanksCardClient.Services
             Employee responseEmployee = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Employees", employee);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Employee", employee);
                 if (response.IsSuccessStatusCode)
                 {
                     responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
@@ -104,7 +104,7 @@ namespace ThanksCardClient.Services
             Employee responseEmployee = null;
             try
             {
-                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Employees/" + employee.Id, employee);
+                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Employee/" + employee.Id, employee);
                 if (response.IsSuccessStatusCode)
                 {
                     responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
@@ -122,7 +122,7 @@ namespace ThanksCardClient.Services
             Employee responseEmployee = null;
             try
             {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Employees/" + Id);
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Employee/" + Id);
                 if (response.IsSuccessStatusCode)
                 {
                     responseEmployee = await response.Content.ReadFromJsonAsync<Employee>();
@@ -140,7 +140,7 @@ namespace ThanksCardClient.Services
             List<Organization> responseOrganizations = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Organizations");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Organization");
                 if (response.IsSuccessStatusCode)
                 {
                     responseOrganizations = await response.Content.ReadFromJsonAsync<List<Organization>>();
@@ -158,7 +158,7 @@ namespace ThanksCardClient.Services
             Organization responseOrganization = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Organizations", organization);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Organization", organization);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -177,7 +177,7 @@ namespace ThanksCardClient.Services
             Organization responseOrganization = null;
             try
             {
-                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Organizations/" + organization.Id, organization);
+                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Organization/" + organization.Id, organization);
                 if (response.IsSuccessStatusCode)
                 {
                     responseOrganization = await response.Content.ReadFromJsonAsync<Organization>();
@@ -195,7 +195,7 @@ namespace ThanksCardClient.Services
             Organization responseOrganization = null;
             try
             {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Organizations/" + Id);
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Organization/" + Id);
                 if (response.IsSuccessStatusCode)
                 {
                     responseOrganization = await response.Content.ReadFromJsonAsync<Organization>();

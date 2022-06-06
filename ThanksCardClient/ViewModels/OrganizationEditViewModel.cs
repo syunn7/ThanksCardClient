@@ -66,8 +66,8 @@ namespace ThanksCardClient.ViewModels
 
         private async void UpdateOrganizations()
         {
-            Organization dept = new Organization();
-            this.Organizations = await dept.GetOrganizationsAsync();
+            Organization organization = new Organization();
+            this.Organizations = await organization.GetOrganizationsAsync();
         }
 
         #region SubmitCommand

@@ -37,7 +37,11 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<SendBox>();
             //containerRegistry.RegisterForNavigation<PastList>();
             containerRegistry.RegisterForNavigation<EmployeeMg>();
+            containerRegistry.RegisterForNavigation<EmployeeCreate>();
+            containerRegistry.RegisterForNavigation<EmployeeEdit>();
             containerRegistry.RegisterForNavigation<OrganizationMg>();
+            containerRegistry.RegisterForNavigation<OrganizationCreate>();
+            containerRegistry.RegisterForNavigation<OrganizationEdit>();
             containerRegistry.RegisterForNavigation<ClassificationMg>();
             //containerRegistry.RegisterForNavigation<DetailList>();
             containerRegistry.RegisterForNavigation<Manual>();

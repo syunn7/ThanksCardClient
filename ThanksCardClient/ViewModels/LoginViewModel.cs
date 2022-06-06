@@ -39,8 +39,8 @@ namespace ThanksCardClient.ViewModels
 
             // 開発中のみアカウントを admin/admin でセットしておく。
             this.Employee = new Employee();
-            this.Employee.EmployeeCd = "";
-            this.Employee.Password = "";
+            this.Employee.EmployeeCd = "a0001";
+            this.Employee.Password = "admin";
         }
 
         #region LoginCommand

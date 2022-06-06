@@ -52,8 +52,8 @@ namespace ThanksCardClient.ViewModels
 
         private async void UpdateOrganizations()
         {
-            Organization dept = new Organization();
-            this.Organizations = await dept.GetOrganizationsAsync();
+            Organization organization = new Organization();
+            this.Organizations = await organization.GetOrganizationsAsync();
 
             this.Organization = new Organization();
         }
@@ -77,7 +77,7 @@ namespace ThanksCardClient.ViewModels
         {
             Organization createdOrganization = await Organization.PostOrganizationAsync(this.Organization);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OrganizationMg));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.OrganizationMg));
         }
         #endregion
 
