@@ -74,12 +74,12 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
-        #region CreatedDateTimeProperty
-        private DateTime _CreatedDateTime;
-        public DateTime CreatedDateTime
+        #region DateProperty
+        private DateTime _Date;
+        public DateTime Date
         {
-            get { return _CreatedDateTime; }
-            set { SetProperty(ref _CreatedDateTime, value); }
+            get { return _Date; }
+            set { SetProperty(ref _Date, value); }
         }
         #endregion
 
@@ -95,7 +95,7 @@ namespace ThanksCardClient.Models
 
         public ThanksCard()
         {
-            this.CreatedDateTime = DateTime.Now;
+            this.Date = DateTime.Now;
         }
 
         public async Task<List<ThanksCard>> GetThanksCardsAsync()
