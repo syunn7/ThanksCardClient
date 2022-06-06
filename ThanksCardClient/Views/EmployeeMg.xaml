@@ -10,5 +10,32 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/社員管理画面.png"/>
         </Grid.Background>
+        <DataGrid Margin="49,136,49,136" ItemsSource="{Binding Employees}" AutoGenerateColumns="False" CanUserAddRows="False" Width="1268" Height="448">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="社員コード" Binding="{Binding EmployeeCd}" />
+                <DataGridTextColumn Header="名前" Binding="{Binding EmployeeName}" />
+                <DataGridTextColumn Header="フリガナ" Binding="{Binding Furigana}" />
+                <DataGridTextColumn Header="パスワード" Binding="{Binding Password}" />
+                <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" />
+                <DataGridTextColumn Header="部署" Binding="{Binding Organization.OrganizationName}" />
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
+                            <Button Content="編集" Command="{Binding DataContext.EmployeeEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.EmployeeDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+                <Button Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,642,0,0" VerticalAlignment="Top" Width="150" Opacity="0.008" Command="{Binding HomeCommand}"/>
+        <Button Content="" HorizontalAlignment="Left" Height="50" Margin="7,47,0,0" VerticalAlignment="Top" Width="230" Opacity="0.008" Command="{Binding EmployeeCreateCommand}"/>
     </Grid>
 </UserControl>

@@ -60,7 +60,7 @@ namespace ThanksCardClient.ViewModels
 
         void ExecuteEmployeeCreateCommand()
         {
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.EmployeeCreate));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.EmployeeCreate));
         }
         #endregion
 
@@ -76,7 +76,7 @@ namespace ThanksCardClient.ViewModels
             var parameters = new NavigationParameters();
             parameters.Add("SelectedEmployee", SelectedEmployee);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.EmployeeEdit), parameters);
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.EmployeeEdit), parameters);
         }
         #endregion
 
@@ -91,6 +91,16 @@ namespace ThanksCardClient.ViewModels
 
             // ユーザ一覧 Employees を更新する。
             this.UpdateEmployees();
+        }
+        #endregion
+
+        #region  HomeCommand
+        private DelegateCommand _HomeCommand;
+        public DelegateCommand HomeCommand =>
+            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
+        void ExecuteHomeCommand()
+        {
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
         }
         #endregion
     }
