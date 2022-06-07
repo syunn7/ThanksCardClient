@@ -14,18 +14,21 @@
     <None Remove="Views\マニュアル画面.png" />
     <None Remove="Views\ログイン画面.png" />
     <None Remove="Views\分類変更画面.png" />
-    <None Remove="Views\分類登録画面 %281%29.png" />
-    <None Remove="Views\分類管理画面 %282%29.png" />
+    <None Remove="Views\分類登録画面.png" />
     <None Remove="Views\分類管理画面.png" />
     <None Remove="Views\受信BOX画面 %281%29.png" />
     <None Remove="Views\感謝カード作成画面 .png" />
+    <None Remove="Views\感謝カード作成画面.png" />
     <None Remove="Views\社員コード.png" />
+    <None Remove="Views\社員変更画面.png" />
+    <None Remove="Views\社員登録画面.png" />
     <None Remove="Views\社員管理画面.png" />
     <None Remove="Views\組織変更画面.png" />
     <None Remove="Views\組織登録画面.png" />
     <None Remove="Views\組織管理画面.png" />
     <None Remove="Views\表示画面.png" />
     <None Remove="Views\送信BOX画面.png" />
+    <None Remove="Views\過去一覧画面.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,18 +43,20 @@
     <Resource Include="Views\マニュアル画面.png" />
     <Resource Include="Views\ログイン画面.png" />
     <Resource Include="Views\分類変更画面.png" />
-    <Resource Include="Views\分類登録画面 (1).png" />
-    <Resource Include="Views\分類管理画面 (2).png" />
+    <Resource Include="Views\分類登録画面.png" />
     <Resource Include="Views\分類管理画面.png" />
     <Resource Include="Views\受信BOX画面 (1).png" />
-    <Resource Include="Views\感謝カード作成画面 .png" />
+    <Resource Include="Views\感謝カード作成画面.png" />
     <Resource Include="Views\社員コード.png" />
+    <Resource Include="Views\社員変更画面.png" />
+    <Resource Include="Views\社員登録画面.png" />
     <Resource Include="Views\社員管理画面.png" />
     <Resource Include="Views\組織変更画面.png" />
     <Resource Include="Views\組織登録画面.png" />
     <Resource Include="Views\組織管理画面.png" />
     <Resource Include="Views\表示画面.png" />
     <Resource Include="Views\送信BOX画面.png" />
+    <Resource Include="Views\過去一覧画面.png" />
   </ItemGroup>
 
 </Project>
