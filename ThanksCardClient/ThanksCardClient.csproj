@@ -13,6 +13,9 @@
     <None Remove="Views\ホーム画面.png" />
     <None Remove="Views\マニュアル画面.png" />
     <None Remove="Views\ログイン画面.png" />
+    <None Remove="Views\分類変更画面.png" />
+    <None Remove="Views\分類登録画面 %281%29.png" />
+    <None Remove="Views\分類管理画面 %282%29.png" />
     <None Remove="Views\分類管理画面.png" />
     <None Remove="Views\受信BOX画面 %281%29.png" />
     <None Remove="Views\感謝カード作成画面 .png" />
@@ -36,6 +39,9 @@
     <Resource Include="Views\ホーム画面.png" />
     <Resource Include="Views\マニュアル画面.png" />
     <Resource Include="Views\ログイン画面.png" />
+    <Resource Include="Views\分類変更画面.png" />
+    <Resource Include="Views\分類登録画面 (1).png" />
+    <Resource Include="Views\分類管理画面 (2).png" />
     <Resource Include="Views\分類管理画面.png" />
     <Resource Include="Views\受信BOX画面 (1).png" />
     <Resource Include="Views\感謝カード作成画面 .png" />
