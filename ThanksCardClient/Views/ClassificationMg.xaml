@@ -8,7 +8,7 @@
              d:DesignHeight="720" d:DesignWidth="1366">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/分類管理画面 (2).png"/>
+            <ImageBrush ImageSource="/Views/分類管理画面.png"/>
         </Grid.Background>
         <Button Command="{Binding ClassificationCreateCommand}" HorizontalAlignment="Left" Height="50" Margin="10,49,0,0" VerticalAlignment="Top" Width="228" Opacity="0"/>
         <Button HorizontalAlignment="Left" Height="48" Margin="257,116,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>

@@ -112,7 +112,7 @@ namespace ThanksCardClient.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
         #endregion
     }

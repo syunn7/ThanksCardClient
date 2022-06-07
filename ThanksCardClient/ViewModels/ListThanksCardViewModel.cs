@@ -43,6 +43,12 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
+        async void UpdateThanksCard()
+        {
+            ThanksCard thanksCard = new ThanksCard();
+            this.ThanksCards = await thanksCard.GetThanksCardsAsync();
+        }
+
         #region ThanksCardDisplayCommand
 
         private DelegateCommand<ThanksCard> _ThanksCardDisplayCommand;
@@ -59,6 +65,17 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        #region DeleteThanksCardCommand
+        private DelegateCommand<ThanksCard> _DeleteThanksCardCommand;
+        public DelegateCommand<ThanksCard> DeleteThanksCardCommand =>
+            _DeleteThanksCardCommand ?? (_DeleteThanksCardCommand = new DelegateCommand<ThanksCard>(ExcuteDeleteThanksCardCommand));
+
+        async void ExcuteDeleteThanksCardCommand(ThanksCard SelectedThanksCard)
+        {
+            ThanksCard thanksCard = await SelectedThanksCard.DeleteThanksCardAsync(SelectedThanksCard.Id);
+            this.UpdateThanksCard();
+        }
+        #endregion
         #region  HomeCommand
         private DelegateCommand _HomeCommand;
         public DelegateCommand HomeCommand =>

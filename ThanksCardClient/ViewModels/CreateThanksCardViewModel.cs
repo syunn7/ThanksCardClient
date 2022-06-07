@@ -93,7 +93,6 @@ namespace ThanksCardClient.ViewModels
         {
             //throw new NotImplementedException();
         }
-
         #region FromOrganizationsChangedCommand
         private DelegateCommand<long?> _FromOrganizationsChangedCommand;
         public DelegateCommand<long?> FromOrganizationsChangedCommand =>
@@ -138,7 +137,7 @@ namespace ThanksCardClient.ViewModels
             ThanksCard createdThanksCard = await ThanksCard.PostThanksCardAsync(this.ThanksCard);
 
             //TODO: Error handling
-            this.regionManager.RequestNavigate("MainRegion", nameof(Views.ThanksCardList));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.ListThanksCard));
 
         }
         #endregion

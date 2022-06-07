@@ -21,7 +21,7 @@
                 <DataGridTemplateColumn IsReadOnly="True" Header="分類">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <ListBox ItemsSource="{Binding ThanksCardTags}" DisplayMemberPath="Tag.Name"/>
+                            <ListBox ItemsSource="{Binding ThanksCardClassifications}" DisplayMemberPath="Classification.ClassificationName"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -30,6 +30,13 @@
                         <DataTemplate>
                             <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
                             <Button Content="詳細" Command="{Binding DataContext.ThanksCardDisplayCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.DeleteThanksCardCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

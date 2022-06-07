@@ -23,7 +23,7 @@
             </i:Interaction.Triggers>
         </ComboBox>
         <ComboBox ItemsSource="{Binding ToEmployees}" DisplayMemberPath="EmployeeName" SelectedValue="{Binding ThanksCard.ToId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="40" Margin="275,170,0,0" VerticalAlignment="Top" Width="350" FontSize="24" Opacity="0.8"/>
-        <ListBox ItemsSource="{Binding Classifications}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="Name" HorizontalAlignment="Left" Height="89" Margin="857,121,0,0" VerticalAlignment="Top" Width="210" FontSize="24" Opacity="0.8">
+        <ListBox ItemsSource="{Binding Classifications}" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" DisplayMemberPath="ClassificationName" HorizontalAlignment="Left" Height="89" Margin="857,121,0,0" VerticalAlignment="Top" Width="210" FontSize="24" Opacity="0.8">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="IsSelected" Value="{Binding Selected}" />
