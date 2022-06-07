@@ -67,7 +67,7 @@ namespace ThanksCardClient.Models
             return createdClassification;
         }
 
-        public async Task<Classification> PutTagAsync(Classification classification)
+        public async Task<Classification> PutClassificationAsync(Classification classification)
         {
             IRestService rest = new RestService();
             Classification updatedClassification = await rest.PutClassificationAsync(classification);

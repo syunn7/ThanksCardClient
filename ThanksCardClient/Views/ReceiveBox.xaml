@@ -14,5 +14,7 @@
             <ImageBrush ImageSource="/Views/受信BOX画面 (1).png"/>
         </Grid.Background>
         <Button Command="{Binding HomeCommand}" HorizontalAlignment="Center" Height="50" Margin="0,639,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
+        <DataGrid Margin="10,66,10,106" ItemsSource="{Binding ThanksCard}"/>
+        
     </Grid>
 </UserControl>
