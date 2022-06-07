@@ -8,7 +8,7 @@
              d:DesignHeight="720" d:DesignWidth="1366">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/分類管理画面 .png"/>
+            <ImageBrush ImageSource="/Views/分類管理画面 (1).png"/>
         </Grid.Background>
         <TextBox Text="TextBox" HorizontalAlignment="Left" Height="50" Margin="258,214,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
         <Button Command="{Binding ClassificationCreateCommand}" HorizontalAlignment="Left" Height="50" Margin="10,49,0,0" VerticalAlignment="Top" Width="228" Opacity="0"/>
@@ -16,10 +16,25 @@
         <Button HorizontalAlignment="Left" Height="49" Margin="610,115,0,0" VerticalAlignment="Top" Width="149" Opacity="0"/>
         <Button  Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="49" Margin="610,627,0,0" VerticalAlignment="Top" Width="149" Opacity="0"/>
         <TextBox HorizontalAlignment="Left" Height="50" Margin="257,287,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
-        <DataGrid ItemsSource="{Binding Classification}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="610,214,56,158">
+        <DataGrid ItemsSource="{Binding Classification}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="610,157,51,157">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="分類CD" Binding="{Binding Id}" Width="150" />
                 <DataGridTextColumn Header="分類名" Binding="{Binding ClassificationName}" Width="150" />
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
+                            <Button Content="編集" Command="{Binding DataContext.ClassificationEditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="削除" Command="{Binding DataContext.ClassificationDeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 

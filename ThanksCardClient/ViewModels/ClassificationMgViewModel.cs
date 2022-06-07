@@ -43,14 +43,20 @@ namespace ThanksCardClient.ViewModels
         {
             Classification Classification = new Classification();
             this.Classification = await Classification.GetClassificationAsync();
-
-
         }
+
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
         }
+
+        private async void UpdateClassifications()
+        {
+            Classification Classification = new Classification();
+            this.Classification = await Classification.GetClassificationAsync();
+        }
+
 
 
         #region  ClassificationCreateCommand
@@ -62,6 +68,37 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.ClassificationCreate));
         }
         #endregion
+
+        #region ClassificationEditCommand
+
+        private DelegateCommand<Classification> _ClassificationEditCommand;
+        public DelegateCommand<Classification> ClassificationEditCommand =>
+            _ClassificationEditCommand ?? (_ClassificationEditCommand = new DelegateCommand<Classification>(ExecuteClassificationEditCommand));
+
+        void ExecuteClassificationEditCommand(Classification SelectedClassification)
+        {
+            // 対象のEmployeeをパラメーターとして画面遷移先に渡す。
+            var parameters = new NavigationParameters();
+            parameters.Add("SelectedClassification", SelectedClassification);
+
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.ClassificationEdit), parameters);
+        }
+        #endregion
+
+        #region ClassificationDeleteCommand
+        private DelegateCommand<Classification> _ClassificationDeleteCommand;
+        public DelegateCommand<Classification> ClassificationDeleteCommand =>
+            _ClassificationDeleteCommand ?? (_ClassificationDeleteCommand = new DelegateCommand<Classification>(ExecuteClassificationDeleteCommand));
+
+        async void ExecuteClassificationDeleteCommand(Classification SelectedClassification)
+        {
+            Classification deletedClassification = await SelectedClassification.DeleteClassificationAsync(SelectedClassification.Id);
+
+            //分類一覧 Classification を更新する。
+            this.UpdateClassifications();
+        }
+        #endregion
+
 
         #region  HomeCommand
         private DelegateCommand _HomeCommand;
@@ -75,7 +112,7 @@ namespace ThanksCardClient.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
         #endregion
     }
