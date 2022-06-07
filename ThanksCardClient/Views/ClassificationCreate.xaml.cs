@@ -16,16 +16,16 @@ using System.Windows.Shapes;
 namespace ThanksCardClient.Views
 {
     /// <summary>
-    /// ClassificationMg.xaml の相互作用ロジック
+    /// ClassificationCreate.xaml の相互作用ロジック
     /// </summary>
-    public partial class ClassificationMg : UserControl
+    public partial class ClassificationCreate : UserControl
     {
-        public ClassificationMg()
+        public ClassificationCreate()
         {
             InitializeComponent();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

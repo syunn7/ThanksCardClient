@@ -268,7 +268,7 @@ namespace ThanksCardClient.Services
             List<Classification> responseClassifications = null;
             try
             {
-                var response = await Client.GetAsync(this.BaseUrl + "/api/Classifications");
+                var response = await Client.GetAsync(this.BaseUrl + "/api/Classification");
                 if (response.IsSuccessStatusCode)
                 {
                     responseClassifications = await response.Content.ReadFromJsonAsync<List<Classification>>();
@@ -286,7 +286,7 @@ namespace ThanksCardClient.Services
             Classification responseClassification = null;
             try
             {
-                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Classifications", classification);
+                var response = await Client.PostAsJsonAsync(this.BaseUrl + "/api/Classification", classification);
                 if (response.IsSuccessStatusCode)
                 {
                     responseClassification = await response.Content.ReadFromJsonAsync<Classification>();
@@ -304,7 +304,7 @@ namespace ThanksCardClient.Services
             Classification responseClassification = null;
             try
             {
-                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Classifications/" + classification.Id, classification);
+                var response = await Client.PutAsJsonAsync(this.BaseUrl + "/api/Classification/" + classification.Id, classification);
                 if (response.IsSuccessStatusCode)
                 {
                     responseClassification = await response.Content.ReadFromJsonAsync<Classification>();
@@ -322,7 +322,7 @@ namespace ThanksCardClient.Services
             Classification responseClassification = null;
             try
             {
-                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Classifications/" + Id);
+                var response = await Client.DeleteAsync(this.BaseUrl + "/api/Classification/" + Id);
                 if (response.IsSuccessStatusCode)
                 {
                     responseClassification = await response.Content.ReadFromJsonAsync<Classification>();
