@@ -8,17 +8,14 @@
              d:DesignHeight="720" d:DesignWidth="1366">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/分類管理画面 .png"/>
+            <ImageBrush ImageSource="/Views/分類管理画面 (2).png"/>
         </Grid.Background>
-        <TextBox Text="TextBox" HorizontalAlignment="Left" Height="50" Margin="258,214,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
         <Button Command="{Binding ClassificationCreateCommand}" HorizontalAlignment="Left" Height="50" Margin="10,49,0,0" VerticalAlignment="Top" Width="228" Opacity="0"/>
         <Button HorizontalAlignment="Left" Height="48" Margin="257,116,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
         <Button HorizontalAlignment="Left" Height="49" Margin="610,115,0,0" VerticalAlignment="Top" Width="149" Opacity="0"/>
         <Button  Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="49" Margin="610,627,0,0" VerticalAlignment="Top" Width="149" Opacity="0"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="257,287,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="300" FontSize="36" BorderThickness="1,0,0,0" BorderBrush="#FFEFF1F7"/>
-        <DataGrid ItemsSource="{Binding Classification}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="610,214,56,158">
+        <DataGrid ItemsSource="{Binding Classification}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="50,169,50,110">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="分類CD" Binding="{Binding Id}" Width="150" />
                 <DataGridTextColumn Header="分類名" Binding="{Binding ClassificationName}" Width="150" />
             </DataGrid.Columns>
         </DataGrid>
