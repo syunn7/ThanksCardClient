@@ -53,10 +53,10 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
-        public async Task<List<Classification>> GetClassificationsAsync()
+        public async Task<List<Classification>> GetClassificationAsync()
         {
             IRestService rest = new RestService();
-            List<Classification> Classifications = await rest.GetClassificationsAsync();
+            var Classifications = await rest.GetClassificationsAsync();
             return Classifications;
         }
 
@@ -80,7 +80,6 @@ namespace ThanksCardClient.Models
             Classification deletedClassification = await rest.DeleteClassificationAsync(Id);
             return deletedClassification;
         }
-
 
     }
 }

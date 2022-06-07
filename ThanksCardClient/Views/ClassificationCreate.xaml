@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.ClassificationCreate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThanksCardClient.Views" xmlns:models="clr-namespace:ThanksCardClient.Models" d:DataContext="{d:DesignInstance Type=models:Classification}"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1366">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/分類登録画面.png"/>
+        </Grid.Background>
+        <TextBox Text="{Binding Classification.Id}" HorizontalAlignment="Left" Height="51" Margin="391,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" BorderThickness="0,0,1,1" FontSize="36" BorderBrush="#00000000"/>
+        <TextBox Text="{Binding Classification.ClassificationName}" HorizontalAlignment="Left" Height="50" Margin="391,369,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="368" FontSize="36" BorderThickness="0,1,1,1" ClipToBounds="True" BorderBrush="#00000000"/>
+        <Button Content="" Command="{Binding SubmitCommand}" Cursor="Hand"  HorizontalAlignment="Center" Height="51" Margin="0,532,0,0" VerticalAlignment="Top" Width="153" Opacity="0" Background="White" IsDefault="True" Click="Button_Click"/>
+        <Button Content="" Command="{Binding HomeCommand}" HorizontalAlignment="Center" Height="51" Margin="0,627,0,0" VerticalAlignment="Top" Width="153" Opacity="0" Background="White" Cursor="Hand"/>
+    </Grid>
+</UserControl>

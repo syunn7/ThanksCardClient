@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿#nullable disable
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
@@ -75,7 +76,7 @@ namespace ThanksCardClient.ViewModels
             }
 
             var classification = new Classification();
-            this.Classifications = await classification.GetClassificationsAsync();
+            this.Classifications = await classification.GetClassificationAsync();
 
             var organization = new Organization();
             this.Organizations = await organization.GetOrganizationsAsync();

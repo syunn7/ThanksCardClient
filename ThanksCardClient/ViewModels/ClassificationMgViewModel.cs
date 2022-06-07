@@ -6,12 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ThanksCardClient.Models;
+using ThanksCardClient.Services;
 
 #nullable disable
 namespace ThanksCardClient.ViewModels
 {
-    
-    public class ClassificationMgViewModel : BindableBase
+
+    public class ClassificationMgViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
         public ClassificationMgViewModel(IRegionManager regionManager)
@@ -19,15 +21,63 @@ namespace ThanksCardClient.ViewModels
             this.regionManager = regionManager;
         }
 
+        #region ClassificationProperty
+        private List<Classification> _Classification;
+        public List<Classification> Classification
+        {
+            get { return _Classification; }
+            set { SetProperty(ref _Classification, value); }
+        }
+        #endregion
 
-    #region  HomeCommand
-    private DelegateCommand _HomeCommand;
-    public DelegateCommand HomeCommand =>
-        _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
-    void ExecuteHomeCommand()
-    {
-        this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
-    }
-    #endregion
+        #region ClassificationsProperty
+        private Classification _Classifications;
+        public Classification Classifications
+        {
+            get { return _Classifications; }
+            set { SetProperty(ref _Classifications, value); }
+        }
+        #endregion
+
+        public async void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            Classification Classification = new Classification();
+            this.Classification = await Classification.GetClassificationAsync();
+
+
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+
+        #region  ClassificationCreateCommand
+        private DelegateCommand _ClassificationCreateCommand;
+        public DelegateCommand ClassificationCreateCommand =>
+            _ClassificationCreateCommand ?? (_ClassificationCreateCommand = new DelegateCommand(ExecuteClassificationCreateCommand));
+        void ExecuteClassificationCreateCommand()
+        {
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.ClassificationCreate));
+        }
+        #endregion
+
+        #region  HomeCommand
+        private DelegateCommand _HomeCommand;
+        public DelegateCommand HomeCommand =>
+            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
+        void ExecuteHomeCommand()
+        {
+
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
+        }
+        #endregion
     }
 }
+
