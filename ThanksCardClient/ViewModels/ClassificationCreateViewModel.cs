@@ -12,7 +12,7 @@ using ThanksCardClient.Models;
 namespace ThanksCardClient.ViewModels
 {
 
-    public class ClassificationCreateViewModel : BindableBase
+    public class ClassificationCreateViewModel : BindableBase, INavigationAware
     { 
             private readonly IRegionManager regionManager;
 
@@ -46,19 +46,19 @@ namespace ThanksCardClient.ViewModels
             public ClassificationCreateViewModel(IRegionManager regionManager)
             {
                 this.regionManager = regionManager;
-
+                
                 this.Classification = new Classification();
             }
 
-           
-               
 
-            #region SubmitCommand
-            private DelegateCommand _SubmitCommand;
-        public DelegateCommand SubmitCommand =>
-            _SubmitCommand ?? (_SubmitCommand = new DelegateCommand(ExecuteSubmitCommand));
 
-        async void ExecuteSubmitCommand()
+
+        #region CreateCommand
+        private DelegateCommand _CreateCommand;
+        public DelegateCommand CreateCommand =>
+            _CreateCommand ?? (_CreateCommand = new DelegateCommand(ExecuteCreateCommand));
+
+        async void ExecuteCreateCommand()
         {
             Classification CreateClassification = await Classification.PostClassificationAsync(this.Classification);
 
@@ -76,6 +76,22 @@ namespace ThanksCardClient.ViewModels
         void ExecuteHomeCommand()
         {
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            Classification.ClassificationName = "";
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
+            return false;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
         }
         #endregion
     }
