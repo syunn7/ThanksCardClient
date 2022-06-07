@@ -58,5 +58,15 @@ namespace ThanksCardClient.ViewModels
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.ThanksCardDisplay), parameters);
         }
         #endregion
+
+        #region  HomeCommand
+        private DelegateCommand _HomeCommand;
+        public DelegateCommand HomeCommand =>
+            _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
+        void ExecuteHomeCommand()
+        {
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
+        }
+        #endregion
     }
 }

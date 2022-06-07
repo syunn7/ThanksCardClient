@@ -4,21 +4,16 @@ using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
-    public class CreateThanksCardViewModel : BindableBase
+    public class CreateThanksCardViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
-        public CreateThanksCardViewModel(IRegionManager regionManager)
-        {
-            this.regionManager = regionManager;
-        }
 
         #region ThanksCardProperty
         private ThanksCard _ThanksCard;
@@ -65,6 +60,13 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
+        public CreateThanksCardViewModel(IRegionManager regionManager)
+        {
+            this.regionManager = regionManager;
+        }
+
+        // この画面に遷移し終わったときに呼ばれる。
+        // それを利用し、画面表示に必要なプロパティを初期化している。
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
             this.ThanksCard = new ThanksCard();
@@ -108,9 +110,9 @@ namespace ThanksCardClient.ViewModels
         public DelegateCommand<long?> ToOrganizationsChangedCommand =>
             _ToOrganizationsChangedCommand ?? (_ToOrganizationsChangedCommand = new DelegateCommand<long?>(ExecuteToOrganizationsChangedCommand));
 
-        async void ExecuteToOrganizationsChangedCommand(long? ToOrganizationId)
+        async void ExecuteToOrganizationsChangedCommand(long? ToDepartmentId)
         {
-            this.ToEmployees = await SessionService.Instance.AuthorizedEmployee.GetOrganizationUsersAsync(ToOrganizationId);
+            this.ToEmployees = await SessionService.Instance.AuthorizedEmployee.GetOrganizationUsersAsync(ToDepartmentId);
         }
         #endregion
 
@@ -140,6 +142,7 @@ namespace ThanksCardClient.ViewModels
 
         }
         #endregion
+
         #region  HomeCommand
         private DelegateCommand _HomeCommand;
         public DelegateCommand HomeCommand =>

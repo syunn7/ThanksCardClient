@@ -38,16 +38,16 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        /*#region PastListCommand
-        private DelegateCommand _PastListCommand;
-        public DelegateCommand PastListCommand =>
-            _PastListCommand ?? (_PastListCommand = new DelegateCommand(ExecutePastListCommand));
+        #region ListThanksCardCommand
+        private DelegateCommand _ListThanksCardCommand;
+        public DelegateCommand ListThanksCardCommand =>
+            _ListThanksCardCommand ?? (_ListThanksCardCommand = new DelegateCommand(ExecuteListThanksCardCommand));
 
-        void ExecutePastListCommand()
+        void ExecuteListThanksCardCommand()
         {
-            this.regionManager.RequestNavigate("MainRegion", nameof(Views.PastList));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.ListThanksCard));
         }
-        #endregion*/
+        #endregion
 
         #region ReceiveBoxCommand
         private DelegateCommand _ReceiveBoxCommand; 

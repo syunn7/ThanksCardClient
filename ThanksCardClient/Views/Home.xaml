@@ -13,7 +13,7 @@
         </Grid.Background>
         <Button Content="" HorizontalAlignment="Left" Height="50" Margin="1190,45,0,0" VerticalAlignment="Top" Width="160" Opacity="0" Command="{Binding LogoutCommand}" Cursor="Hand"/>
         <Button Content="" HorizontalAlignment="Left" Height="50" Margin="14,554,0,0" VerticalAlignment="Top" Width="200" Opacity="0" Command="{Binding CreateThanksCardCommand}" Cursor="Hand"/>
-       <!--Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="244,554,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding PastListCommand}" Cursor="Hand"/-->
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="244,554,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding ListThanksCardCommand}" Cursor="Hand"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="14,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0.009" Command="{Binding ReceiveBoxCommand}" Cursor="Hand"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="190,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding SendBoxCommand}" Cursor="Hand"/>
         <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="364,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding EmployeeMgCommand}" Cursor="Hand" IsEnabled="{Binding AuthorizedEmployee.IsAdmin}"/>
