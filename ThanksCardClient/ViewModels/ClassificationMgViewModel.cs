@@ -48,7 +48,7 @@ namespace ThanksCardClient.ViewModels
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            return true;
+            return false;
         }
 
         private async void UpdateClassifications()
@@ -70,7 +70,6 @@ namespace ThanksCardClient.ViewModels
         #endregion
 
         #region ClassificationEditCommand
-
         private DelegateCommand<Classification> _ClassificationEditCommand;
         public DelegateCommand<Classification> ClassificationEditCommand =>
             _ClassificationEditCommand ?? (_ClassificationEditCommand = new DelegateCommand<Classification>(ExecuteClassificationEditCommand));
@@ -79,7 +78,7 @@ namespace ThanksCardClient.ViewModels
         {
             // 対象のEmployeeをパラメーターとして画面遷移先に渡す。
             var parameters = new NavigationParameters();
-            parameters.Add("SelectedClassification", SelectedClassification);
+           parameters.Add("SelectedClassification", SelectedClassification);
 
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.ClassificationEdit), parameters);
         }
