@@ -370,5 +370,23 @@ namespace ThanksCardClient.Services
             }
             return responseRanks;
         }
+
+        public async Task<List<AnalyzeDtoD>> GetAnalyzeDtoDsAsync()
+        {
+            List<AnalyzeDtoD> responseAnalyzeDtoDs = null;
+            try
+            {
+                var response = await Client.GetAsync(this.BaseUrl + "/api/AnalyzeDtoD");
+                if (response.IsSuccessStatusCode)
+                {
+                    responseAnalyzeDtoDs = await response.Content.ReadFromJsonAsync<List<AnalyzeDtoD>>();
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("Exception in RestService.GetAnalyzeDtoDsAsync: " + e);
+            }
+            return responseAnalyzeDtoDs;
+        }
     }
 }

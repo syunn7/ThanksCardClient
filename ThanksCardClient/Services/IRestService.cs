@@ -42,5 +42,9 @@ namespace ThanksCardClient.Services
 
         // Rank REST API Client
         Task<List<Rank>> GetRanksAsync();
+
+        //AnalyzeDtoD REst Client
+        Task<List<AnalyzeDtoD>> GetAnalyzeDtoDsAsync();
+        
     }
 }

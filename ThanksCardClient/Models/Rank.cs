@@ -20,7 +20,7 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
-        #region NameProperty
+        #region CountProperty
         private int _Count;
         public int Count
         {

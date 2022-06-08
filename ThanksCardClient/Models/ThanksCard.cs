@@ -92,6 +92,14 @@ namespace ThanksCardClient.Models
         }
         #endregion
 
+        #region CountProperty
+        private int _ThanksCount;
+        public int ThanksCount
+        {
+            get { return _ThanksCount; }
+            set { SetProperty(ref _ThanksCount, value); }
+        }
+        #endregion
 
         public ThanksCard()
         {

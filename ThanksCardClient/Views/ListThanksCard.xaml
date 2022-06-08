@@ -12,12 +12,6 @@
         </Grid.Background>
         <DataGrid Margin="80,106,80,107" ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False"  FontSize="36" Opacity="0.9">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
-                <DataGridTextColumn Header="感謝の言葉" Binding="{Binding Contents}" />
-                <DataGridTextColumn Header="From" Binding="{Binding From.EmployeeName}" />
-                <DataGridTextColumn Header="To" Binding="{Binding To.EmployeeName}" />
-                <DataGridTextColumn Header="作成日時" Binding="{Binding Date}" />
                 <DataGridTemplateColumn IsReadOnly="True" Header="分類">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -25,6 +19,12 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Header="Id" Binding="{Binding Id}" />-->
+                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
+                <!--<DataGridTextColumn Header="感謝の言葉" Binding="{Binding Contents}" />-->
+                <DataGridTextColumn Header="From" Binding="{Binding From.EmployeeName}" />
+                <DataGridTextColumn Header="To" Binding="{Binding To.EmployeeName}" />
+                <DataGridTextColumn Header="作成日時" Binding="{Binding Date}" />
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
