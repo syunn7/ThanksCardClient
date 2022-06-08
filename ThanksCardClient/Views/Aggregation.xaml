@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="ThanksCardClient.Views.Aggregation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThanksCardClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1366">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Views/集計画面.png"/>
+        </Grid.Background>
+        <DataGrid Margin="320,213,320,109" ItemsSource="{Binding AnalyzeDtoDs}" AutoGenerateColumns="False" CanUserAddRows="False"/>
+        <Button Command="{Binding HomeCommand}" Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,624,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
+    </Grid>
+</UserControl>

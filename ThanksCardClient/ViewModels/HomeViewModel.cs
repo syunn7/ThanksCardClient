@@ -136,7 +136,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion*/
 
-        /*#region AggregationCommand
+        #region AggregationCommand
         private DelegateCommand _AggregationCommand;
         public DelegateCommand AggregationCommand =>
             _AggregationCommand ?? (_AggregationCommand = new DelegateCommand(ExecuteAggregationCommand));
@@ -147,7 +147,7 @@ namespace ThanksCardClient.ViewModels
         }
         #endregion
 
-        #region DetailListCommand
+        /*#region DetailListCommand
         private DelegateCommand _DetailListCommand;
         public DelegateCommand DetailListCommand =>
             _DetailListCommand ?? (_DetailListCommand = new DelegateCommand(ExecuteDetailListCommand));

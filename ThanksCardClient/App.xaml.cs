@@ -49,7 +49,7 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<Manual>();
             containerRegistry.RegisterForNavigation<ThanksCardDisplay>();
             containerRegistry.RegisterForNavigation<ListThanksCard>();
-            //containerRegistry.RegisterForNavigation<Aggregation>();
+            containerRegistry.RegisterForNavigation<Aggregation>();
             containerRegistry.RegisterForNavigation<UserMst>();
             containerRegistry.RegisterForNavigation<UserCreate>();
             containerRegistry.RegisterForNavigation<UserEdit>();
