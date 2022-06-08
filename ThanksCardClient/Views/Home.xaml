@@ -21,6 +21,11 @@
         <Button Content="" HorizontalAlignment="Left" Height="50" Margin="714,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding ClassificationMgCommand}" Cursor="Hand" IsEnabled="{Binding AuthorizedEmployee.IsAdmin}"/>
         <!--Button Content="" HorizontalAlignment="Left" Height="50" Margin="901,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding DetailListCommand}" Cursor="Hand"/-->
         <Button Content="" HorizontalAlignment="Left" Height="80" Margin="1252,627,0,0" VerticalAlignment="Top" Width="80" Opacity="0" Command="{Binding ManualCommand}" Cursor="Hand"/>
-        <!--Button Content="" HorizontalAlignment="Left" Height="50" Margin="422,471,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding AggregationCommand}" Cursor="Hand" IsEnabled="{Binding AuthorizedEmployee.IsAdmin}"/-->
+        <DataGrid Margin="72,150,843,318" ItemsSource="{Binding Ranks}" AutoGenerateColumns="True" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="総数" Binding="{Binding Count}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

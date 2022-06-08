@@ -21,6 +21,15 @@ namespace ThanksCardClient.ViewModels
             set { SetProperty(ref _AuthorizedEmployee, value); }
         }
 
+        #region RanksProperty
+        private List<Rank> _Ranks;
+        public List<Rank> Ranks
+        {
+            get { return _Ranks; }
+            set { SetProperty(ref _Ranks, value); }
+        }
+        #endregion
+
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
@@ -33,8 +42,16 @@ namespace ThanksCardClient.ViewModels
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
-           
+            //this.UpdateRanks();
+            Rank Rank = new Rank();
+            this.Ranks = await Rank.GetRanksAsync();
         }
+
+        /*private async void UpdateRanks()
+        {
+            Rank rank = new Rank();
+            this.Ranks = await rank.GetRanksAsync();
+        }*/
 
         public HomeViewModel(IRegionManager regionManager)
         {

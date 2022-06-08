@@ -39,5 +39,8 @@ namespace ThanksCardClient.Services
         Task<Classification> PostClassificationAsync(Classification Classifications);
         Task<Classification> PutClassificationAsync(Classification Classifications);
         Task<Classification> DeleteClassificationAsync(long Id);
+
+        // Rank REST API Client
+        Task<List<Rank>> GetRanksAsync();
     }
 }
