@@ -26,13 +26,9 @@ namespace ThanksCardClient
         {
             containerRegistry.RegisterForNavigation<MainWindow>();
             containerRegistry.RegisterForNavigation<Header>();
-            containerRegistry.RegisterForNavigation<Logon>();
             containerRegistry.RegisterForNavigation<Login>();
-            containerRegistry.RegisterForNavigation<Footer>();
             containerRegistry.RegisterForNavigation<Home>();
-            containerRegistry.RegisterForNavigation<ThanksCardCreate>();
             containerRegistry.RegisterForNavigation<CreateThanksCard>();
-            containerRegistry.RegisterForNavigation<ThanksCardList>();
             containerRegistry.RegisterForNavigation<ReceiveBox>();
             containerRegistry.RegisterForNavigation<SendBox>();
             //containerRegistry.RegisterForNavigation<PastList>();
@@ -50,15 +46,6 @@ namespace ThanksCardClient
             containerRegistry.RegisterForNavigation<ThanksCardDisplay>();
             containerRegistry.RegisterForNavigation<ListThanksCard>();
             containerRegistry.RegisterForNavigation<Aggregation>();
-            containerRegistry.RegisterForNavigation<UserMst>();
-            containerRegistry.RegisterForNavigation<UserCreate>();
-            containerRegistry.RegisterForNavigation<UserEdit>();
-            containerRegistry.RegisterForNavigation<DepartmentMst>();
-            containerRegistry.RegisterForNavigation<DepartmentCreate>();
-            containerRegistry.RegisterForNavigation<DepartmentEdit>();
-            containerRegistry.RegisterForNavigation<TagMst>();
-            containerRegistry.RegisterForNavigation<TagCreate>();
-            containerRegistry.RegisterForNavigation<TagEdit>();
         }
     }
 }

@@ -17,6 +17,6 @@
                 <DataGridTextColumn Header="総数" Binding="{Binding ThanksCount}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Command="{Binding HomeCommand}" Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,624,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
+        <Button Command="{Binding HomeCommand}" Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,624,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
     </Grid>
 </UserControl>

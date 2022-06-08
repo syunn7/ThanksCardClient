@@ -20,7 +20,7 @@
                 <Style/>
             </CheckBox.Style>
         </CheckBox>
-        <Button Content="" HorizontalAlignment="Center" Height="50" Margin="0,571,0,0" VerticalAlignment="Top" Width="150" Opacity="0.007" Command="{Binding SubmitCommand}"/>
-        <Button Content="" HorizontalAlignment="Center" Height="50" Margin="0,642,0,0" VerticalAlignment="Top" Width="150" Opacity="0.007" Command="{Binding HomeCommand}"/>
+        <Button Content="" HorizontalAlignment="Center" Height="50" Margin="0,571,0,0" VerticalAlignment="Top" Width="150" Opacity="0.007" Command="{Binding SubmitCommand}" Cursor="Hand"/>
+        <Button Content="" HorizontalAlignment="Center" Height="50" Margin="0,642,0,0" VerticalAlignment="Top" Width="150" Opacity="0.007" Command="{Binding HomeCommand}" Cursor="Hand"/>
     </Grid>
 </UserControl>
