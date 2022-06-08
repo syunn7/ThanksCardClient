@@ -66,7 +66,6 @@ namespace ThanksCardClient.ViewModels
 
 
         #region ThanksCardDisplayCommand
-
         private DelegateCommand<ThanksCard> _ThanksCardDisplayCommand;
         public DelegateCommand<ThanksCard> ThanksCardDisplayCommand =>
             _ThanksCardDisplayCommand ?? (_ThanksCardDisplayCommand = new DelegateCommand<ThanksCard>(ExecuteThanksCardDisplayCommand));
@@ -75,7 +74,7 @@ namespace ThanksCardClient.ViewModels
         {
             // 対象のUserをパラメーターとして画面遷移先に渡す。
             var parameters = new NavigationParameters();
-            parameters.Add("SelectedUser", SelectedThanksCard);
+            parameters.Add("SelectedThanksCard", SelectedThanksCard);
 
             this.regionManager.RequestNavigate("MainRegion", nameof(Views.ThanksCardDisplay), parameters);
         }
@@ -92,7 +91,7 @@ namespace ThanksCardClient.ViewModels
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
