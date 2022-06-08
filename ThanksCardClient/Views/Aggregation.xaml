@@ -10,7 +10,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/集計画面.png"/>
         </Grid.Background>
-        <DataGrid Margin="320,213,320,109" ItemsSource="{Binding AnalyzeDtoDs}" AutoGenerateColumns="False" CanUserAddRows="False"/>
+        <DataGrid Margin="320,213,320,109" ItemsSource="{Binding AnalyzeDtoDs}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="組織名" Binding="{Binding ToOrganizationName}" />
+                <DataGridTextColumn Header="組織名" Binding="{Binding FromOrganizationName}" />
+                <DataGridTextColumn Header="総数" Binding="{Binding ThanksCount}" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Command="{Binding HomeCommand}" Content="Button" HorizontalAlignment="Center" Height="50" Margin="0,624,0,0" VerticalAlignment="Top" Width="150" Opacity="0"/>
     </Grid>
 </UserControl>
