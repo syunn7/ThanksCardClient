@@ -14,6 +14,29 @@
             <ImageBrush ImageSource="/Views/送信BOX画面.png"/>
         </Grid.Background>
         <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="50" Margin="644,642,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
-        <DataGrid Margin="10,70,10,102" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="9,64,10,110">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="件名" Binding="{Binding Title}" Width="300" />
+                <DataGridTextColumn Header="宛先" Binding="{Binding To.EmployeeName}" Width="300" />
+                <DataGridTextColumn Header="日付" Binding="{Binding Date}" Width="300" />
+
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
+                            <Button Content="カード詳細" Command="{Binding DataContext.ThanksCardDisplayCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Width="300" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Content="確認" IsChecked="{Binding IsSelected.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

@@ -17,14 +17,14 @@
         <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="9,64,10,110">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="件名" Binding="{Binding Title}" Width="300" />
-                <DataGridTextColumn Header="日付" Binding="{Binding Date}" Width="300" />
                 <DataGridTextColumn Header="差出人" Binding="{Binding From.EmployeeName}" Width="300" />
+                <DataGridTextColumn Header="日付" Binding="{Binding Date}" Width="300" />
                 
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
-                            <Button Content="差出人" Command="{Binding DataContext.ThanksCardDisplayCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Width="300" />
+                            <Button Content="カード詳細" Command="{Binding DataContext.ThanksCardDisplayCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Width="300" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
