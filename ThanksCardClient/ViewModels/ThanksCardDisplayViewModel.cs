@@ -11,22 +11,29 @@ using ThanksCardClient.Models;
 #nullable disable
 namespace ThanksCardClient.ViewModels
 {
-    public class ThanksCardDisplayViewModel : BindableBase
+    public class ThanksCardDisplayViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
 
-        private List<ThanksCard> _ThanksCard;
-        public List<ThanksCard> ThanksCard
+        private ThanksCard _ThanksCard;
+        public ThanksCard ThanksCard
         {
             get { return _ThanksCard; }
             set { SetProperty(ref _ThanksCard, value); }
         }
 
-        private List<ThanksCard> _ThanksCards;
-        public List<ThanksCard> ThanksCards
+        private List<Employee> _Employees;
+        public List<Employee> Employees
         {
-            get { return _ThanksCards; }
-            set { SetProperty(ref _ThanksCards, value); }
+            get { return _Employees; }
+            set { SetProperty(ref _Employees, value); }
+        }
+
+        private List<Organization> _Organizations;
+        public List<Organization> Organizations
+        {
+            get { return _Organizations; }
+            set { SetProperty(ref _Organizations, value); }
         }
 
         public ThanksCardDisplayViewModel(IRegionManager regionManager)
@@ -45,18 +52,15 @@ namespace ThanksCardClient.ViewModels
             //throw new NotImplementedException();
         }
 
-        public void OnNavigatedTo(NavigationContext navigationContext)
+        public async void OnNavigatedTo(NavigationContext navigationContext)
         {
             // 画面遷移元から送られる SelectedTag パラメーターを取得。
-            this.ThanksCards = navigationContext.Parameters.GetValue<ThanksCard>("SelectedThanksCard");
+            this.ThanksCard = navigationContext.Parameters.GetValue<ThanksCard>("SelectedThanksCard");
 
-            this.UpdateThanksCard();
-        }
-
-        async void UpdateThanksCard()
-        {
-            ThanksCard thanksCard = new ThanksCard();
-            this.ThanksCards = await thanksCard.GetThanksCardsAsync();
+            Employee employee = new Employee();
+            this.Employees = await employee.GetEmployeesAsync();
+            Organization organization = new Organization();
+            this.Organizations = await organization.GetOrganizationsAsync();
         }
         #region   HomeCommand
         private DelegateCommand _HomeCommand;

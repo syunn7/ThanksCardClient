@@ -17,8 +17,8 @@
         <Button HorizontalAlignment="Left" Height="44" Margin="1054,297,0,0" VerticalAlignment="Top" Width="107" Opacity="0"/>
         <Button HorizontalAlignment="Left" Height="44" Margin="1166,297,0,0" VerticalAlignment="Top" Width="106" Opacity="0" Background="#FFDDDDDD"/>
         <TextBox HorizontalAlignment="Left" Height="156" Margin="251,133,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Contents}" VerticalAlignment="Top" Width="1017" FontSize="24" Background="{x:Null}" BorderBrush="#00000000" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="39" Margin="82,125,0,0" TextWrapping="Wrap" Text="{Binding From.EmployeeName}" VerticalAlignment="Top" Width="163" FontSize="24" Padding="45,0,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Height="39" Margin="82,199,0,0" TextWrapping="Wrap" Text="{Binding To.EmployeeName}" VerticalAlignment="Top" Width="163" FontSize="24" Padding="45,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="82,125,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.From.EmployeeName}" VerticalAlignment="Top" Width="163" FontSize="24" Padding="45,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="82,199,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.To.EmployeeName}" VerticalAlignment="Top" Width="163" FontSize="24" Padding="45,0,0,0"/>
         <TextBlock HorizontalAlignment="Left" Height="39" Margin="308,314,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="163" FontSize="24" Padding="25,0,0,0"/>
         <TextBlock HorizontalAlignment="Left" Height="39" Margin="530,314,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="169" FontSize="24" Padding="45,0,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="124" Margin="250,470,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1022" FontSize="24" Background="{x:Null}" BorderBrush="#00000000"/>

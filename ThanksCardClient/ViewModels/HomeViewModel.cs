@@ -10,7 +10,7 @@ using ThanksCardClient.Services;
 
 namespace ThanksCardClient.ViewModels
 {
-    internal class HomeViewModel : BindableBase
+    internal class HomeViewModel : BindableBase, INavigationAware
     {
         private readonly IRegionManager regionManager;
 
@@ -19,6 +19,21 @@ namespace ThanksCardClient.ViewModels
         {
             get { return _AuthorizedEmployee; }
             set { SetProperty(ref _AuthorizedEmployee, value); }
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public async void OnNavigatedTo(NavigationContext navigationContext)
+        {
+           
         }
 
         public HomeViewModel(IRegionManager regionManager)

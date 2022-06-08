@@ -76,6 +76,7 @@ namespace ThanksCardClient.ViewModels
             this.UpdateThanksCard();
         }
         #endregion
+
         #region  HomeCommand
         private DelegateCommand _HomeCommand;
         public DelegateCommand HomeCommand =>
