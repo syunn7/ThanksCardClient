@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
@@ -60,10 +62,21 @@ namespace ThanksCardClient.ViewModels
             ThanksCards = this.ThanksCards.Where(x => x.ToId == AuthorizedEmployee.Id).ToList();
         }
 
+        #region ThanksCardCommand
 
+        private DelegateCommand<ThanksCard> _ThanksCardCommand;
+        public DelegateCommand<ThanksCard> ThanksCardCommand =>
+            _ThanksCardCommand ?? (_ThanksCardCommand = new DelegateCommand<ThanksCard>(ExecuteThanksCardCommand));
 
-
-
+        void ExecuteThanksCardCommand(ThanksCard SelectedThanksCards)
+        {
+            // 対象のEmployeeをパラメーターとして画面遷移先に渡す。
+            var parameters = new NavigationParameters();
+            parameters.Add("SelectedThanksCard", SelectedThanksCards);
+            //ThanksCards = this.ThanksCards.Where(x => x.ToId == parameters.Id).ToList();
+            //ThanksCards.IsCheck = True;
+        }
+        #endregion
 
         #region ThanksCardDisplayCommand
         private DelegateCommand<ThanksCard> _ThanksCardDisplayCommand;
@@ -86,6 +99,7 @@ namespace ThanksCardClient.ViewModels
                 _HomeCommand ?? (_HomeCommand = new DelegateCommand(ExecuteHomeCommand));
             void ExecuteHomeCommand()
             {
+                
                 this.regionManager.RequestNavigate("MainRegion", nameof(Views.Home));
             }
 

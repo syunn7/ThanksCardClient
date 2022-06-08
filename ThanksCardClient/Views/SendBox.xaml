@@ -28,14 +28,15 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <!--<DataGridTemplateColumn Header="">
+                <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox Content="確認" IsChecked="{Binding IsSelected.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <!--<CheckBox Content="" IsChecked="{Binding IsSelected.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="termsOfServiceCheckBox"/>-->
+                            <CheckBox Content="確認" IsEnabled="{Binding Receive.checkBox}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

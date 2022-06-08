@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using ThanksCardClient.Models;
 using ThanksCardClient.Services;
 
@@ -60,8 +62,10 @@ namespace ThanksCardClient.ViewModels
             ThanksCards = this.ThanksCards.Where(x => x.FromId == AuthorizedEmployee.Id).ToList();
         }
 
-
-
+        private void chk01_Checked(object sender, RoutedEventArgs e)
+        {
+            if (((CheckBox)sender).IsChecked == true);
+        }
 
 
 
