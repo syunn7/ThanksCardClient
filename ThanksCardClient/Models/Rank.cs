@@ -21,8 +21,8 @@ namespace ThanksCardClient.Models
         #endregion
 
         #region NameProperty
-        private string _Count;
-        public string Count
+        private int _Count;
+        public int Count
         {
             get { return _Count; }
             set { SetProperty(ref _Count, value); }

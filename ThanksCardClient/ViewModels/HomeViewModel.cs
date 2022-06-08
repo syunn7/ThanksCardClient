@@ -42,16 +42,16 @@ namespace ThanksCardClient.ViewModels
 
         public async void OnNavigatedTo(NavigationContext navigationContext)
         {
-            //this.UpdateRanks();
-            Rank Rank = new Rank();
-            this.Ranks = await Rank.GetRanksAsync();
+            this.UpdateRanks();
+            //Rank Rank = new Rank();
+            //this.Ranks = await Rank.GetRanksAsync();
         }
 
-        /*private async void UpdateRanks()
+        private async void UpdateRanks()
         {
             Rank rank = new Rank();
             this.Ranks = await rank.GetRanksAsync();
-        }*/
+        }
 
         public HomeViewModel(IRegionManager regionManager)
         {
