@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/過去一覧画面.png"/>
         </Grid.Background>
-        <DataGrid Margin="80,106,80,107" ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False"  FontSize="36" Opacity="0.9">
+        <DataGrid Margin="80,106,80,107" ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False"  FontSize="24" Opacity="0.9">
             <DataGrid.Columns>
                 <DataGridTemplateColumn IsReadOnly="True" Header="分類">
                     <DataGridTemplateColumn.CellTemplate>
@@ -20,12 +20,12 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <!--<DataGridTextColumn Header="Id" Binding="{Binding Id}" />-->
-                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}" Width="290" />
                 <!--<DataGridTextColumn Header="感謝の言葉" Binding="{Binding Contents}" />-->
-                <DataGridTextColumn Header="From" Binding="{Binding From.EmployeeName}" />
-                <DataGridTextColumn Header="To" Binding="{Binding To.EmployeeName}" />
+                <DataGridTextColumn Header="From" Binding="{Binding From.EmployeeName}" Width="200" />
+                <DataGridTextColumn Header="To" Binding="{Binding To.EmployeeName}" Width="200" />
                 <DataGridTextColumn Header="作成日時" Binding="{Binding Date}" />
-                <DataGridTemplateColumn Header="">
+                <DataGridTemplateColumn Header="" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <!-- CommandParameter に {Binding} とだけ記述すると、MainWindowViewModel.Departments の要素、つまり Department モデルを指定したことになる。-->
@@ -33,7 +33,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="">
+                <DataGridTemplateColumn Header="" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="削除" Command="{Binding DataContext.DeleteThanksCardCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>

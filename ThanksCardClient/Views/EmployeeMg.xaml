@@ -10,14 +10,14 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/社員管理画面.png"/>
         </Grid.Background>
-        <DataGrid Margin="49,136,49,136" ItemsSource="{Binding Employees}" AutoGenerateColumns="False" CanUserAddRows="False" Width="1268" Height="448" FontSize="36" Opacity="0.8">
+        <DataGrid Margin="49,136,49,136" ItemsSource="{Binding Employees}" AutoGenerateColumns="False" CanUserAddRows="False" Width="1268" Height="448" FontSize="24" Opacity="0.8">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="社員コード" Binding="{Binding EmployeeCd}" Width="170" />
-                <DataGridTextColumn Header="名前" Binding="{Binding EmployeeName}" Width="200" />
-                <DataGridTextColumn Header="フリガナ" Binding="{Binding Furigana}" Width="200" />
+                <DataGridTextColumn Header="名前" Binding="{Binding EmployeeName}" Width="220" />
+                <DataGridTextColumn Header="フリガナ" Binding="{Binding Furigana}" Width="220" />
                 <DataGridTextColumn Header="管理者" Binding="{Binding IsAdmin}" />
-                <DataGridTextColumn Header="親組織" Binding="{Binding Organization.Parent.OrganizationName}" Width="200" />
-                <DataGridTextColumn Header="組織" Binding="{Binding Organization.OrganizationName}" Width="200" />
+                <DataGridTextColumn Header="親組織" Binding="{Binding Organization.Parent.OrganizationName}" Width="220" />
+                <DataGridTextColumn Header="組織" Binding="{Binding Organization.OrganizationName}" Width="220" />
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
