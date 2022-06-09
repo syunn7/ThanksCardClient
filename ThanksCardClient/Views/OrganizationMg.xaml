@@ -14,7 +14,7 @@
         </Grid.Background>
         <Button  Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="49" Margin="610,631,0,0" VerticalAlignment="Top" Width="149" Opacity="0" Cursor="Hand"/>
         <Button Content="" Command="{Binding OrganizationCreateCommand}" HorizontalAlignment="Left" Height="50" Margin="4,46,0,0" VerticalAlignment="Top" Width="230" Opacity="0.013" Cursor="Hand"/>
-        <DataGrid Margin="48,136,50,136" ItemsSource="{Binding Organizations}" AutoGenerateColumns="False" CanUserAddRows="False" FontSize="36" Opacity="0.9">
+        <DataGrid Margin="48,136,50,136" ItemsSource="{Binding Organizations}" AutoGenerateColumns="False" CanUserAddRows="False" FontSize="36" Opacity="0.8">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="コード" Binding="{Binding OrganizationCd}" Width="200" FontSize="36" />
                 <DataGridTextColumn Header="親部署" Binding="{Binding Parent.OrganizationName}" FontSize="36" Width="443" />

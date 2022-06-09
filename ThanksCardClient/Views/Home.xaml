@@ -20,11 +20,11 @@
         <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="539,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding OrganizationMgCommand}" Cursor="Hand" IsEnabled="{Binding AuthorizedEmployee.IsAdmin}"/>
         <Button Content="" HorizontalAlignment="Left" Height="50" Margin="714,638,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding ClassificationMgCommand}" Cursor="Hand" IsEnabled="{Binding AuthorizedEmployee.IsAdmin}"/>
         <Button Content="" HorizontalAlignment="Left" Height="50" Margin="421,471,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Command="{Binding AggregationCommand}" Cursor="Hand"/>
-        <Button Content="" HorizontalAlignment="Left" Height="80" Margin="1252,627,0,0" VerticalAlignment="Top" Width="80" Opacity="0" Command="{Binding ManualCommand}" Cursor="Hand"/>
-        <DataGrid Margin="72,150,843,318" ItemsSource="{Binding Ranks}" AutoGenerateColumns="False" CanUserAddRows="False">
+        <Button Content="" HorizontalAlignment="Left" Height="80" Margin="1252,606,0,0" VerticalAlignment="Top" Width="80" Opacity="0" Command="{Binding ManualCommand}" Cursor="Hand"/>
+        <DataGrid Margin="72,150,843,318" ItemsSource="{Binding Ranks}" AutoGenerateColumns="False" CanUserAddRows="False" FontSize="24" Opacity="0.8">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="名前" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="総数" Binding="{Binding Count}" />
+                <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="218" />
+                <DataGridTextColumn Header="総数" Binding="{Binding Count}" Width="218" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

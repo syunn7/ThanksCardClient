@@ -79,7 +79,7 @@ namespace ThanksCardClient.ViewModels
         {
             Organization updatedOrganization = await this.Organization.PutOrganizationAsync(this.Organization);
 
-            this.regionManager.RequestNavigate("ContentRegion", nameof(Views.OrganizationMg));
+            this.regionManager.RequestNavigate("MainRegion", nameof(Views.OrganizationMg));
         }
         #endregion
 

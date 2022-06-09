@@ -11,20 +11,19 @@
     </UserControl.Background>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/受信BOX画面 (1).png"/>
+            <ImageBrush ImageSource="/Views/受信BOX画面.png"/>
         </Grid.Background>
         <Button Command="{Binding HomeCommand}" HorizontalAlignment="Center" Height="50" Margin="0,639,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Cursor="Hand"/>
-        <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="9,64,10,110">
+        <DataGrid ItemsSource="{Binding ThanksCards}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="83,64,83,110" FontSize="36" Opacity="0.8">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="件名" Binding="{Binding Title}" Width="300" />
-                <DataGridTextColumn Header="差出人" Binding="{Binding From.EmployeeName}" Width="300" />
-                <DataGridTextColumn Header="日付" Binding="{Binding Date}" Width="300" />
-                
+                <DataGridTextColumn Header="件名" Binding="{Binding Title}" Width="400" />
+                <DataGridTextColumn Header="差出人" Binding="{Binding From.EmployeeName}" Width="400" />
+                <DataGridTextColumn Header="日付" Binding="{Binding Date}" Width="275" />
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <!-- CommandParameter に {Binding} とだけ記述すると、UserMstViewModel.Users の要素、つまり User モデルを指定したことになる。-->
-                            <Button Content="カード詳細" Command="{Binding DataContext.ThanksCardDisplayCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Width="300" />
+                            <Button Content="詳細" Command="{Binding DataContext.ThanksCardDisplayCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -10,13 +10,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/社員変更画面.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,132,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeCd}" VerticalAlignment="Top" Width="250"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,201,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeName}" VerticalAlignment="Top" Width="350"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,275,0,0" TextWrapping="Wrap" Text="{Binding Employee.Furigana}" VerticalAlignment="Top" Width="350"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,349,0,0" TextWrapping="Wrap" Text="{Binding Employee.Password}" VerticalAlignment="Top" Width="250"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,132,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeCd}" VerticalAlignment="Top" Width="250" Opacity="0.9" FontSize="36"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,201,0,0" TextWrapping="Wrap" Text="{Binding Employee.EmployeeName}" VerticalAlignment="Top" Width="350" Opacity="0.9" FontSize="36"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,275,0,0" TextWrapping="Wrap" Text="{Binding Employee.Furigana}" VerticalAlignment="Top" Width="350" Opacity="0.9" FontSize="36"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="550,349,0,0" TextWrapping="Wrap" Text="{Binding Employee.Password}" VerticalAlignment="Top" Width="250" Opacity="0.9" FontSize="36"/>
         <Button Content="" HorizontalAlignment="Center" Height="50" Margin="0,571,0,0" VerticalAlignment="Top" Width="150" Opacity="0.012" Command="{Binding SubmitCommand}" Cursor="Hand"/>
         <Button Content="" HorizontalAlignment="Center" Height="50" Margin="0,642,0,0" VerticalAlignment="Top" Width="150" Opacity="0.012" Command="{Binding HomeCommand}" Cursor="Hand"/>
-        <ComboBox ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValue="{Binding Employee.OrganizationId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="56" Margin="550,422,0,0" VerticalAlignment="Top" Width="370"/>
+        <ComboBox ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValue="{Binding Employee.OrganizationId}" SelectedValuePath="Id" HorizontalAlignment="Left" Height="56" Margin="550,422,0,0" VerticalAlignment="Top" Width="370" Opacity="0.9" FontSize="36"/>
         <CheckBox Content="" HorizontalAlignment="Left" Margin="565,517,0,0" VerticalAlignment="Top" IsChecked="{Binding Employee.IsAdmin}"/>
     </Grid>
 </UserControl>

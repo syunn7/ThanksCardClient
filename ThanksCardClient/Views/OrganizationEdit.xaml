@@ -16,9 +16,9 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Views/組織変更画面.png"/>
         </Grid.Background>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="425,259,0,0" TextWrapping="Wrap" Text="{Binding Organization.OrganizationCd}" VerticalAlignment="Top" Width="250"/>
-        <ComboBox SelectedItem="{Binding Organization.Parent}" ItemsSource="{Binding Organizations}" DisplayMemberPath="Name" SelectedValue="{Binding Organization.Parent}" HorizontalAlignment="Left" Height="50" Margin="425,333,0,0" VerticalAlignment="Top" Width="400"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="425,410,0,0" TextWrapping="Wrap" Text="{Binding Organization.OrganizationName}" VerticalAlignment="Top" Width="400"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="425,259,0,0" TextWrapping="Wrap" Text="{Binding Organization.OrganizationCd}" VerticalAlignment="Top" Width="250" Opacity="0.9" FontSize="36"/>
+        <ComboBox SelectedItem="{Binding Organization.Parent}" ItemsSource="{Binding Organizations}" DisplayMemberPath="OrganizationName" SelectedValue="{Binding Organization.Parent}" HorizontalAlignment="Left" Height="50" Margin="425,333,0,0" VerticalAlignment="Top" Width="400" Opacity="0.9" FontSize="36"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="425,410,0,0" TextWrapping="Wrap" Text="{Binding Organization.OrganizationName}" VerticalAlignment="Top" Width="400" Opacity="0.9" FontSize="36"/>
         <Button Content="" Command="{Binding SubmitCommand}" HorizontalAlignment="Center" Height="50" Margin="0,65,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Grid.Row="1" Cursor="Hand"/>
         <Button Content="" Command="{Binding HomeCommand}" HorizontalAlignment="Center" Height="50" Margin="0,162,0,0" VerticalAlignment="Top" Width="150" Opacity="0" Grid.Row="1" Cursor="Hand"/>
     </Grid>

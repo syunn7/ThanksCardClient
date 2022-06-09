@@ -11,17 +11,18 @@
     </UserControl.Background>
     <Grid Visibility="Visible">
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/表示画面.png"/>
+            <ImageBrush ImageSource="/Views/感謝カード表示.png"/>
         </Grid.Background>
-        <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="62" Margin="122,34,0,0" VerticalAlignment="Top" Width="161" Opacity="0" Cursor="Hand"/>
-        <TextBox HorizontalAlignment="Left" Height="156" Margin="251,133,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Contents}" VerticalAlignment="Top" Width="1017" FontSize="24" Background="{x:Null}" BorderBrush="#00000000" TextChanged="TextBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="39" Margin="82,125,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.From.EmployeeName}" VerticalAlignment="Top" Width="163" FontSize="24" Padding="45,0,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Height="39" Margin="82,199,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.To.EmployeeName}" VerticalAlignment="Top" Width="163" FontSize="24" Padding="45,0,0,0"/>
+        <Button Command="{Binding HomeCommand}" HorizontalAlignment="Left" Height="62" Margin="623,603,0,0" VerticalAlignment="Top" Width="161" Opacity="0" Cursor="Hand"/>
+        <TextBox HorizontalAlignment="Left" Height="233" Margin="256,343,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Contents}" VerticalAlignment="Top" Width="1017" FontSize="24" Background="{x:Null}" BorderBrush="#00000000" TextChanged="TextBox_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="123,313,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.From.EmployeeName}" VerticalAlignment="Top" Width="122" FontSize="24" Padding="45,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="39" Margin="123,392,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.To.EmployeeName}" VerticalAlignment="Top" Width="122" FontSize="24" Padding="45,0,0,0"/>
         <TextBlock HorizontalAlignment="Left" Height="39" Margin="1130,44,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Date}" VerticalAlignment="Top" Width="169" FontSize="24" Padding="40,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="260" Margin="245,29,0,0" VerticalAlignment="Top" Width="920">
+        <Rectangle HorizontalAlignment="Center" Height="242" Margin="0,21,0,0" VerticalAlignment="Top" Width="920">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Views/3424906.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="50" Margin="297,274,0,0" TextWrapping="Wrap" Text="{Binding ThanksCard.Title}" VerticalAlignment="Top" Width="930" FontSize="36"/>
     </Grid>
 </UserControl>
